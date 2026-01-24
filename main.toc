@@ -1,0 +1,45 @@
+\contentsline {chapter}{\numberline {1}MỞ ĐẦU}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Đặt vấn đề}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Lý do chọn đề tài}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Mục tiêu nghiên cứu}{5}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Đóng góp của đề tài}{6}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Cấu trúc đồ án}{6}{section.1.5}%
+\contentsline {chapter}{\numberline {2}TỔNG QUAN TÀI LIỆU}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Phân tích cảm xúc là gì}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Các phương pháp truyền thống}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Phương pháp dựa trên từ điển}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Phương pháp học máy truyền thống}{7}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Phương pháp Deep Learning}{8}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Word Embeddings}{8}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Recurrent Neural Networks}{8}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Transformer Models}{8}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Phân tích cảm xúc tiếng Việt}{8}{section.2.4}%
+\contentsline {chapter}{\numberline {3}PHƯƠNG PHÁP}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Tổng quan}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Xử lý dữ liệu}{9}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Chuẩn hóa văn bản}{9}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Tách từ}{9}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}Trích xuất đặc trưng}{9}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Word Embeddings}{9}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}Kiến trúc mô hình}{9}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}Mô tả mô hình}{9}{subsection.3.4.1}%
+\contentsline {subsection}{\numberline {3.4.2}Công thức toán học}{10}{subsection.3.4.2}%
+\contentsline {section}{\numberline {3.5}Huấn luyện}{10}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}Hàm mất mát}{10}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}Tối ưu hóa}{10}{subsection.3.5.2}%
+\contentsline {chapter}{\numberline {4}KẾT QUẢ THỰC NGHIỆM}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Thiết lập thử nghiệm}{11}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Tập dữ liệu}{11}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Các chỉ số đánh giá}{11}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Siêu tham số}{11}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Kết quả}{12}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Kết quả chính}{12}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Ablation Study}{12}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Thảo luận}{12}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Phân tích lỗi}{12}{subsection.4.3.1}%
+\contentsline {chapter}{\numberline {5}KẾT LUẬN}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Tóm tắt}{13}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Các phát hiện chính}{13}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Hạn chế}{13}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Hướng phát triển}{13}{section.5.4}%
+\contentsline {chapter}{\numberline {A}Additional Results}{15}{appendix.A}%

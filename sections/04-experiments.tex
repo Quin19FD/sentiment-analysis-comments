@@ -1,0 +1,81 @@
+\chapter{KẾT QUẢ THỰC NGHIỆM}
+\label{chap:experiments}
+
+\section{Thiết lập thử nghiệm}
+
+\subsection{Tập dữ liệu}
+
+Chúng tôi đánh giá mô hình trên các tập dữ liệu sau:
+
+\begin{table}[H]
+\centering
+\caption{Thống kê tập dữ liệu}
+\label{tab:datasets}
+\begin{tabular}{lccc}
+\toprule
+Dataset & Train & Test & Classes \\
+\midrule
+Dataset A & 10.000 & 2.000 & 3 \\
+Dataset B & 15.000 & 3.000 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Các chỉ số đánh giá}
+
+Sử dụng các chỉ số sau để đánh giá hiệu suất mô hình:
+\begin{itemize}
+    \item Độ chính xác (Accuracy)
+    \item Precision, Recall, F1-score
+    \item Ma trận nhầm lẫn (Confusion Matrix)
+\end{itemize}
+
+\subsection{Siêu tham số}
+
+Bảng~\ref{tab:hyperparams} cho thấy các siêu tham số được sử dụng trong thử nghiệm.
+
+\begin{table}[H]
+\centering
+\caption{Cấu hình siêu tham số}
+\label{tab:hyperparams}
+\begin{tabular}{lc}
+\toprule
+Hyperparameter & Value \\
+\midrule
+Batch size & 32 \\
+Learning rate & 0.001 \\
+Epochs & 50 \\
+Optimizer & Adam \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Kết quả}
+
+\subsection{Kết quả chính}
+
+Bảng~\ref{tab:results} trình bày so sánh hiệu suất của các mô hình khác nhau.
+
+\begin{table}[H]
+\centering
+\caption{So sánh hiệu suất}
+\label{tab:results}
+\begin{tabular}{lccc}
+\toprule
+Model & Accuracy & Precision & F1-score \\
+\midrule
+Baseline & 75,2 & 74,8 & 74,5 \\
+Our Model & \textbf{82,5} & \textbf{81,9} & \textbf{82,1} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Ablation Study}
+
+Chúng tôi thực hiện ablation study để hiểu đóng góp của từng thành phần.
+
+\section{Thảo luận}
+
+\subsection{Phân tích lỗi}
+
+Phân tích các trường hợp lỗi phổ biến và xác định các khu vực cần cải thiện.

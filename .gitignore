@@ -1,0 +1,79 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.lof
+*.lot
+*.lol
+*.idx
+*.ind
+*.ilg
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.ps
+
+# PDF outputs (optional - uncomment if you don't want to track PDF)
+# main.pdf
+# *.pdf
+
+# Editor backup files
+*~
+*.swp
+*.swo
+*.bak
+*.backup
+
+# OS-specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# IDE/Editor specific
+.vscode/
+.idea/
+*.sublime-*
+.vs/
+*.code-workspace
+
+# Claude Code local settings
+.claude/settings.local.json
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# SyncTeX
+*.synctex.gz
+
+# latexmk
+.latexmk/
+
+# Bibliography tools
+*.bst
+*.end
+*.xml
+
+# Figures/cache (if generated)
+figures/*.pdf
+figures/*.png
+figures/*.jpg
+figures/*.jpeg
+
+# Overleaf
+.overleaf/

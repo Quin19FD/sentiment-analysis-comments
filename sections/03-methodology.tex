@@ -1,0 +1,82 @@
+\chapter{PHƯƠNG PHÁP}
+\label{chap:methodology}
+
+\section{Tổng quan}
+
+% Hình~\ref{fig:architecture} minh họa kiến trúc tổng thể của hệ thống phân tích cảm xúc được đề xuất.
+%
+% \begin{figure}[H]
+% \centering
+% \includegraphics[width=0.9\textwidth]{figures/architecture.png}
+% \caption{Kiến trúc tổng thể của hệ thống phân tích cảm xúc được đề xuất.}
+% \label{fig:architecture}
+% \end{figure}
+%
+% TODO: Thêm hình architecture.png vào thư mục figures/ và bỏ comment các dòng trên
+
+\section{Xử lý dữ liệu}
+
+\subsection{Chuẩn hóa văn bản}
+
+Chuẩn hóa văn bản bao gồm:
+\begin{itemize}
+    \item Chuyển đổi thành chữ thường
+    \item Xóa các ký tự đặc biệt và URL
+    \item Mở rộng viết tắt
+    \item Sửa lỗi chính tả
+\end{itemize}
+
+\subsection{Tách từ}
+
+Sử dụng phương pháp tách từ phù hợp cho văn bản tiếng Việt để tách câu thành các từ riêng lẻ.
+
+\section{Trích xuất đặc trưng}
+
+\subsection{Word Embeddings}
+
+Sử dụng pre-trained word embeddings để biểu diễn văn bản dưới dạng các vector số.
+
+\section{Kiến trúc mô hình}
+
+\subsection{Mô tả mô hình}
+
+Mô hình của chúng tôi bao gồm vài lớp:
+
+\begin{enumerate}
+    \item Input layer: Nhận văn bản đã xử lý
+    \item Embedding layer: Chuyển tokens thành vector dense
+    \item Encoding layer: Xử lý chuỗi
+    \item Classification layer: Xuất ra xác suất cảm xúc
+\end{enumerate}
+
+\subsection{Công thức toán học}
+
+Cho một chuỗi đầu vào $X = \{x_1, x_2, \ldots, x_n\}$, mô hình tính toán:
+
+\begin{equation}
+h = f(X; \theta)
+\end{equation}
+
+trong đó $f$ là hàm encoding và $\theta$ đại diện cho các tham số mô hình.
+
+Dự đoán cảm xúc được tính toán:
+
+\begin{equation}
+\hat{y} = \arg\max_i \text{softmax}(W h + b)_i
+\end{equation}
+
+\section{Huấn luyện}
+
+\subsection{Hàm mất mát}
+
+Sử dụng cross-entropy loss:
+
+\begin{equation}
+\mathcal{L} = -\sum_{i=1}^{C} y_i \log(\hat{y}_i)
+\end{equation}
+
+trong đó $C$ là số lượng lớp cảm xúc.
+
+\subsection{Tối ưu hóa}
+
+Mô hình được tối ưu hóa bằng Adam optimizer với learning rate $\alpha = 0.001$.

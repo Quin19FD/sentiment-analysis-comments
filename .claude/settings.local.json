@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xelatex:*)",
+      "Bash(code:*)",
+      "Bash(mpm --admin --install=amsthm,mathtools,etoolbox,titlesec:*)",
+      "Bash(mpm:*)",
+      "Bash(initexmf:*)",
+      "Bash(biber:*)",
+      "Bash(pushd:*)",
+      "Bash(popd:*)",
+      "Bash(C:UsersAdminscoopappsmiktexcurrenttexmfsinstallmiktexbinx64biber.exe main)",
+      "Bash(\"C:/Users/Admin/scoop/apps/miktex/current/texmfs/install/miktex/bin/x64/biber.exe\" main)"
+    ]
+  }
+}

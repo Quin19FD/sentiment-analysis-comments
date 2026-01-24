@@ -1,0 +1,114 @@
+% Gói và cấu hình cho bài nghiên cứu
+
+% Lề giấy: trên 3cm, dưới 3cm, trái 3.5cm, phải 2cm
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=3cm,
+    bottom=3cm,
+    left=3.5cm,
+    right=2cm
+}
+
+% Dãn dòng 1.5
+\usepackage{setspace}
+\onehalfspacing
+
+% Phông chữ Times New Roman
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+% \usepackage{anyfontsize}  % Not needed with XeLaTeX
+
+% Căn lề đoạn văn
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{6pt}
+
+% Toán học
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{mathtools}
+
+% Hình ảnh
+\usepackage{graphicx}
+\graphicspath{{images/}{figures/}}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Bảng biểu
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+% Mã nguồn
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    frame=single,
+    numbers=left,
+    numberstyle=\tiny,
+    commentstyle=\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{red}
+}
+
+% Tài liệu tham khảo
+\usepackage[style=ieee, backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+% Header và Footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+\fancyfoot[C]{}
+% Fix headheight warning
+\setlength{\headheight}{13pt}
+
+% Môi trường tùy chỉnh
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+
+% Tùy chỉnh cho tiêu đề chapter - cỡ 14pt, in đậm
+\usepackage{titlesec}
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\titleformat{\chapter}[display]
+    {\normalfont\fontsize{14}{16}\bfseries\centering}
+    {\chaptername\ \thechapter}
+    {0pt}
+    {\fontsize{14}{16}\bfseries}
+
+\titleformat{\section}
+    {\normalfont\fontsize{14}{16}\bfseries}
+    {\thesection}
+    {1em}
+    {}
+
+\titleformat{\subsection}
+    {\normalfont\fontsize{14}{16}\bfseries}
+    {\thesubsection}
+    {1em}
+    {}
+
+% Định dạng đoạn văn bình thường - cỡ 14pt
+\usepackage{etoolbox}
+\AtBeginDocument{%
+    \fontsize{14}{16}\selectfont
+}
+
+% Liên kết - PHẢI LÀ PACKAGE CUỐI CÙNG
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    citecolor=green,
+    pdftitle={Phan tich cam xuc nguoi dung dua tren binh luan truc tuyen},
+    pdfauthor={Do Mai Anh, Nguyen Hoang Quyen},
+}
