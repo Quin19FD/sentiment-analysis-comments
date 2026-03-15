@@ -1,0 +1,722 @@
+% !TEX program = xelatex
+
+\documentclass[14pt, a4paper]{report}
+
+% Include packages
+\input{packages.tex}
+
+\begin{document}
+
+% ========================================
+% TRANG BÌA (không đánh số trang)
+% ========================================
+\include{sections/titlepage}
+\include{sections/titlepagetemp}
+
+% ========================================
+% PHẦN ĐẦU - Đánh số La Mã (i, ii, iii, ...)
+% ========================================
+\frontmatter
+\pagenumbering{Roman}
+\pagestyle{frontmatter}
+
+% ----- LỜI CAM ĐOAN -----
+\chapter*{LỜI CAM ĐOAN}
+\addcontentsline{toc}{chapter}{LỜI CAM ĐOAN}
+
+Chúng em gồm Đỗ Mai Anh và Nguyễn Hoàng Quyên xin cam đoan rằng đề tài đồ án chuyên ngành \textbf{``Phân tích cảm xúc người dùng dựa trên bình luận trực tuyến''} là công trình nghiên cứu do chính chúng em thực hiện dưới sự hướng dẫn của \textbf{TS. Phan Tấn Quốc}.
+
+Tất cả các nội dung, số liệu và kết quả nghiên cứu được trình bày trong báo cáo đều được chúng em thu thập, phân tích và thực hiện một cách trung thực. Các tài liệu, kết quả nghiên cứu của những tác giả khác được sử dụng trong báo cáo đều đã được trích dẫn và ghi rõ nguồn theo đúng quy định.
+
+Chúng em xin chịu hoàn toàn trách nhiệm về tính trung thực và tính xác thực của các nội dung được trình bày trong báo cáo. Đồng thời, chúng em cam kết rằng đề tài này chưa từng được công bố trong bất kỳ công trình nghiên cứu nào trước đây.
+
+\vspace{2cm}
+
+\hfill \textbf{Tác giả:} \\
+\hfill \textbf{Đỗ Mai Anh} \\
+\hfill \textbf{Nguyễn Hoàng Quyên}
+
+\newpage
+
+% ----- LỜI CẢM ƠN -----
+\chapter*{LỜI CẢM ƠN}
+\addcontentsline{toc}{chapter}{LỜI CẢM ƠN}
+
+Trong suốt quá trình học tập và thực hiện đề tài đồ án chuyên ngành, chúng em đã nhận được nhiều sự hướng dẫn, hỗ trợ và động viên quý báu từ thầy cô, gia đình và bạn bè. Với lòng kính trọng và biết ơn sâu sắc, chúng em xin gửi lời cảm ơn chân thành đến tất cả những người đã giúp đỡ chúng em trong quá trình thực hiện đề tài \textbf{``Phân tích cảm xúc người dùng dựa trên bình luận trực tuyến''}.
+
+Trước hết, chúng em xin bày tỏ lòng biết ơn sâu sắc đến \textbf{TS. Phan Tấn Quốc}, người đã trực tiếp hướng dẫn và tận tình chỉ bảo cho chúng em trong suốt quá trình thực hiện đề tài. Thầy đã dành nhiều thời gian, công sức để định hướng nghiên cứu, góp ý chuyên môn và giúp chúng em hoàn thiện nội dung của báo cáo.
+
+Chúng em xin chân thành cảm ơn quý thầy cô trong \textbf{Khoa Công nghệ Thông tin -- Trường Đại học Sài Gòn} đã truyền đạt cho chúng em những kiến thức quý báu trong suốt quá trình học tập tại trường. Những kiến thức nền tảng và kinh nghiệm mà thầy cô cung cấp chính là cơ sở quan trọng giúp chúng em có thể thực hiện và hoàn thành đề tài này.
+
+Bên cạnh đó, chúng em cũng xin gửi lời cảm ơn đến các anh chị và bạn bè đã luôn hỗ trợ, chia sẻ tài liệu, kinh nghiệm học tập cũng như động viên chúng em trong suốt quá trình nghiên cứu và thực hiện đồ án.
+
+Cuối cùng, chúng em xin bày tỏ lòng biết ơn sâu sắc đến gia đình đã luôn quan tâm, động viên và tạo mọi điều kiện thuận lợi để chúng em yên tâm học tập và hoàn thành tốt đề tài.
+
+Mặc dù đã cố gắng hết sức để hoàn thành báo cáo, tuy nhiên do kiến thức và kinh nghiệm nghiên cứu còn hạn chế nên báo cáo khó tránh khỏi những thiếu sót. Chúng em rất mong nhận được những ý kiến đóng góp quý báu từ quý thầy cô để đề tài được hoàn thiện hơn.
+
+Chúng em xin chân thành cảm ơn.
+
+\newpage
+
+% ----- MỤC LỤC -----
+\addcontentsline{toc}{chapter}{MỤC LỤC}
+\tableofcontents
+
+% ----- DANH MỤC HÌNH ẢNH (nếu có) -----
+% \addcontentsline{toc}{chapter}{DANH MỤC HÌNH ẢNH}
+% \listoffigures
+
+% ========================================
+% PHẦN CHÍNH - Đánh số Ả Rập (1, 2, 3, ...)
+% ========================================
+\mainmatter
+\pagenumbering{arabic}
+\pagestyle{mainstyle}
+
+% ----- LỜI MỞ ĐẦU -----
+\chapter*{LỜI MỞ ĐẦU}
+\addcontentsline{toc}{chapter}{LỜI MỞ ĐẦU}
+\markboth{LỜI MỞ ĐẦU}{LỜI MỞ ĐẦU}
+
+% Đổi format đánh số section cho Lời mở đầu: 1, 2, 3... thay vì 0.1, 0.2...
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.}
+
+\section{Lý do chọn đề tài}
+
+Trong kỷ nguyên số, sự phát triển mạnh mẽ của mạng xã hội và các nền tảng thương mại điện tử đã tạo ra một khối lượng lớn dữ liệu văn bản dưới dạng bình luận và đánh giá của người dùng. Nguồn dữ liệu này không chỉ phản ánh chất lượng sản phẩm, dịch vụ mà còn thể hiện rõ thái độ, cảm xúc và xu hướng hành vi của cộng đồng người sử dụng. Vì vậy, phân tích cảm xúc người dùng dựa trên bình luận trực tuyến đã trở thành một bài toán nghiên cứu quan trọng, có ý nghĩa khoa học và giá trị ứng dụng cao.
+
+Trên thực tế, việc xử lý và phân tích thủ công khối lượng dữ liệu văn bản lớn là không khả thi, đòi hỏi các hệ thống tự động có khả năng trích xuất và phân loại cảm xúc một cách chính xác và hiệu quả. Các hệ thống phân tích cảm xúc giúp doanh nghiệp và tổ chức nhanh chóng nắm bắt phản hồi của người dùng, hỗ trợ quá trình ra quyết định, cải thiện chất lượng dịch vụ và xây dựng chiến lược phát triển phù hợp.
+
+Đối với tiếng Việt, bài toán phân tích cảm xúc gặp nhiều thách thức do đặc trưng ngôn ngữ phong phú và linh hoạt. Người dùng thường xuyên sử dụng từ viết tắt, tiếng lóng, sai chính tả, ngôn ngữ mạng và biểu tượng cảm xúc (emoji) để thể hiện thái độ. Ngoài ra, các hiện tượng mỉa mai, châm biếm hay sự đan xen nhiều trạng thái cảm xúc trong cùng một câu khiến các phương pháp phân tích truyền thống trở nên kém hiệu quả. Điều này đòi hỏi các mô hình hiện đại có khả năng hiểu ngữ cảnh và khai thác ngữ nghĩa sâu của văn bản.
+
+Về mặt ứng dụng, phân tích cảm xúc mang lại những giá trị thiết thực cho nhiều lĩnh vực. Trong giáo dục, nó hỗ trợ đánh giá phản hồi và tâm lý người học thông qua các kênh trực tuyến. Trong kinh doanh, nó giúp doanh nghiệp theo dõi mức độ hài lòng của khách hàng và tối ưu hóa trải nghiệm người dùng. Hơn nữa, việc giám sát cảm xúc trên không gian mạng còn có thể nhận diện sớm các xu hướng tiêu cực, góp phần xây dựng một môi trường tương tác lành mạnh.
+
+Dù phân tích cảm xúc đã được nghiên cứu khá rộng rãi nhưng việc xử lý các bình luận trực tiếp vẫn là một vẫn là một bài toán khó. Xuất phát từ thực tế đó, nghiên cứu này được thực hiện với mục tiêu đánh giá và so sánh hiệu quả của nhiều mô hình học máy và học sâu tiên tiến trong bài toán phân tích tiếng Việt thông qua đó xác định mô hình cho kết quả tốt nhất về hiệu quả và khả năng thích ứng.
+
+\section{Lịch sử nghiên cứu vấn đề}
+
+Phân tích cảm xúc là một nhánh quan trọng của xử lý ngôn ngữ tự nhiên, tập trung vào việc xác định và phân loại cảm xúc, thái độ hoặc quan điểm của con người thông qua văn bản.
+
+Trong giai đoạn đầu, các nghiên cứu chủ yếu dựa trên các phương pháp học máy truyền thống như Naive Bayes, Support Vector Machine (SVM) và Logistic Regression. Các mô hình này thường sử dụng các kỹ thuật biểu diễn văn bản đơn giản như Bag-of-Words, n-grams hoặc TF-IDF để trích xuất đặc trưng. Ưu điểm của các phương pháp này là dễ triển khai, yêu cầu tài nguyên tính toán thấp và phù hợp với các tập dữ liệu nhỏ. Tuy nhiên, do phụ thuộc nhiều vào đặc trưng thủ công, chúng gặp hạn chế trong việc nắm bắt ngữ nghĩa sâu và ngữ cảnh phức tạp của văn bản.
+
+Để khắc phục những hạn chế trên, nhiều nghiên cứu đã chuyển sang áp dụng các mô hình học sâu, tiêu biểu là Convolutional Neural Network (CNN), Long Short-Term Memory (LSTM) và BiLSTM. CNN cho phép trích xuất hiệu quả các đặc trưng cục bộ như cụm từ mang tính cảm xúc, trong khi LSTM và BiLSTM có khả năng mô hình hóa dữ liệu tuần tự và ghi nhớ ngữ cảnh dài hạn. Các mô hình lai kết hợp CNN và LSTM cũng đã được đề xuất nhằm tận dụng ưu điểm của cả hai kiến trúc. Mặc dù đạt được kết quả tốt hơn so với các mô hình truyền thống, các phương pháp này vẫn gặp khó khăn khi xử lý câu dài hoặc dữ liệu nhiễu.
+
+Sự xuất hiện của các mô hình ngôn ngữ tiền huấn luyện dựa trên kiến trúc Transformer đã tạo ra bước tiến lớn trong lĩnh vực phân tích cảm xúc. Các mô hình như BERT cho phép học biểu diễn ngữ nghĩa hai chiều và hiểu ngữ cảnh sâu hơn. Đối với tiếng Việt, PhoBERT là một trong những mô hình tiêu biểu, được huấn luyện trên tập dữ liệu lớn và phù hợp với đặc trưng ngôn ngữ đơn lập. Nhiều nghiên cứu cho thấy PhoBERT vượt trội so với các mô hình học sâu truyền thống trong bài toán phân tích cảm xúc tiếng Việt.
+
+Gần đây, một số hướng tiếp cận mới như mạng nơ-ron đồ thị (Graph Neural Networks) và các mô hình lai kết hợp Transformer với CNN hoặc LSTM đã được đề xuất nhằm cải thiện hiệu quả phân loại, đặc biệt đối với các bình luận ngắn. Tuy nhiên, các phương pháp này thường yêu cầu tài nguyên tính toán lớn và gặp khó khăn khi triển khai trên dữ liệu thực tế quy mô lớn. Do đó, việc nghiên cứu, so sánh và lựa chọn mô hình phù hợp cho bài toán phân tích cảm xúc tiếng Việt vẫn là một vấn đề cần được tiếp tục làm rõ.
+
+\section{Mục đích và nhiệm vụ nghiên cứu}
+
+\subsection{Mục đích}
+
+Mục đích của đề tài là thực hiện nghiên cứu thực nghiệm so sánh các mô hình học máy và học sâu nhằm xác định mô hình phù hợp nhất cho bài toán phân tích cảm xúc tiếng Việt. Nghiên cứu sẽ sử dụng các bộ dữ liệu công khai từ Kaggle để đánh giá hiệu quả của các phương pháp từ mô hình truyền thống đến các mô hình hiện đại. Kết quả nghiên cứu hướng đến việc đề xuất giải pháp có độ chính xác cao, khả năng thích nghi tốt với dữ liệu bình luận trực tiếp và phù hợp cho triển khai trong môi trường thực tế.
+
+\subsection{Nhiệm vụ}
+
+Để đạt được mục tiêu đề ra, đề tài tiến hành khảo sát và lựa chọn bộ dữ liệu tiếng Việt phù hợp từ nền tảng Kaggle, đảm bảo quy mô dữ liệu, sự đa dạng của các nhãn cảm xúc cũng như mức độ nhiễu ở ngưỡng chấp nhận được cho bài toán phân tích cảm xúc. Trên cơ sở đó, một quy trình tiền xử lý dữ liệu thống nhất được xây dựng nhằm làm sạch và chuẩn hóa văn bản, đồng thời xử lý các đặc trưng đặc thù của ngôn ngữ mạng tiếng Việt như từ viết tắt, tiếng lóng và biểu tượng cảm xúc.
+
+Tiếp theo, đề tài triển khai và huấn luyện các mô hình học máy truyền thống làm đường cơ sở, song song với việc xây dựng và tinh chỉnh các mô hình học sâu và mô hình lai tiêu biểu như PhoBERT và PhoBERT-CNN-LSTM. Hiệu năng của các mô hình được đánh giá và so sánh thông qua các thước đo chuẩn bao gồm Accuracy, Precision, Recall và F1-score, kết hợp với phân tích các trường hợp dự đoán sai nhằm làm rõ những hạn chế của từng phương pháp.
+
+Cuối cùng, dựa trên kết quả thực nghiệm, đề tài đề xuất mô hình đạt được sự cân bằng hợp lý giữa độ chính xác và chi phí tính toán, làm cơ sở cho việc ứng dụng vào các hệ thống phân tích bình luận trực tiếp trong môi trường thực tế.
+
+\section{Đối tượng và phạm vi nghiên cứu}
+
+\textbf{Đối tượng nghiên cứu} của đề tài là các phương pháp và mô hình học máy, học sâu được ứng dụng trong bài toán phân tích cảm xúc thuộc lĩnh vực xử lý ngôn ngữ tự nhiên. Cụ thể, đề tài tập trung nghiên cứu các mô hình học máy truyền thống như Naive Bayes, Support Vector Machine (SVM), Random Forest và các mô hình học sâu, mô hình lai dựa trên kiến trúc Transformer như PhoBERT, PhoBERT kết hợp CNN và LSTM.
+
+\textbf{Phạm vi nghiên cứu} của đề tài được giới hạn trong việc phân tích dữ liệu văn bản tiếng Việt đơn ngữ, không xét đến các trường hợp bình luận đa ngôn ngữ hoặc dịch tự động. Dữ liệu nghiên cứu là các bình luận trực tuyến được thu thập từ các bộ dữ liệu tiếng Việt công khai trên nền tảng Kaggle, chủ yếu thuộc các lĩnh vực có mức độ tương tác cao như thương mại điện tử, giáo dục và dịch vụ ăn uống.
+
+Đề tài tập trung xây dựng và đánh giá quy trình tiền xử lý phù hợp với đặc thù ngôn ngữ mạng tiếng Việt, bao gồm tách từ, chuẩn hóa văn bản, xử lý từ viết tắt, tiếng lóng và biểu tượng cảm xúc. Kết quả nghiên cứu dừng lại ở mức đánh giá và so sánh hiệu năng của các mô hình, chưa triển khai thành hệ thống ứng dụng hoàn chỉnh trong môi trường thực tế.
+
+\section{Phương pháp nghiên cứu}
+
+Đề tài được thực hiện dựa trên sự kết hợp giữa nghiên cứu lý thuyết và nghiên cứu thực nghiệm, nhằm đảm bảo tính khoa học và khả năng kiểm chứng của kết quả.
+
+\textbf{Nghiên cứu lý thuyết:} Thu thập, tổng hợp và phân tích các tài liệu, bài báo khoa học trong và ngoài nước liên quan đến phân tích cảm xúc, đặc biệt là các công trình nghiên cứu về phân tích cảm xúc cho tiếng Việt. Trên cơ sở đó, đánh giá ưu điểm, hạn chế và khả năng ứng dụng của các phương pháp học máy truyền thống và các mô hình học sâu hiện đại.
+
+{Đề xuất quy trình và thuật toán thực hiện}
+
+Xây dựng quy trình phân tích cảm xúc thống nhất gồm các bước: thu thập dữ liệu, tiền xử lý, huấn luyện mô hình, đánh giá và so sánh kết quả.
+
+Triển khai các mô hình học máy truyền thống làm mô hình nền (baseline) nhằm tạo cơ sở so sánh về hiệu năng và chi phí tính toán.
+
+Xây dựng và tinh chỉnh các mô hình học sâu dựa trên PhoBERT, đồng thời kết hợp với các kiến trúc CNN hoặc LSTM để khai thác ngữ nghĩa sâu và đặc trưng tuần tự của văn bản.
+
+Đề xuất cơ chế mô hình lai, kết hợp đặc trưng ngữ nghĩa từ PhoBERT với các thông tin bổ trợ như từ điển cảm xúc hoặc biểu tượng cảm xúc nhằm cải thiện khả năng nhận diện các trạng thái cảm xúc phức tạp như mỉa mai.
+
+\textbf{Nghiên cứu thực nghiệm:} Xây dựng quy trình phân tích cảm xúc thống nhất gồm các bước: thu thập dữ liệu, tiền xử lý dữ liệu, xây dựng tập huấn luyện và kiểm thử, huấn luyện mô hình và đánh giá kết quả. Các mô hình học máy truyền thống được triển khai làm mô hình nền (baseline), từ đó so sánh với các mô hình học sâu và mô hình lai dựa trên PhoBERT.
+
+\textbf{Phương pháp so sánh và đánh giá:} Hiệu năng của các mô hình được đánh giá thông qua các thước đo chuẩn như Accuracy, Precision, Recall và F1-score. Ngoài ra, đề tài tiến hành phân tích các trường hợp dự đoán sai để làm rõ hạn chế của từng mô hình và khả năng thích nghi đối với dữ liệu bình luận trực tuyến.
+
+\section{Giả thuyết khoa học}
+
+Nghiên cứu này được xây dựng dựa trên giả thuyết rằng các mô hình ngôn ngữ tiền huấn luyện cho tiếng Việt, tiêu biểu là PhoBERT, đạt hiệu quả phân tích cảm xúc cao hơn so với các mô hình học máy truyền thống nhờ khả năng biểu diễn ngữ nghĩa và ngữ cảnh sâu. Bên cạnh đó, việc kết hợp PhoBERT với các kiến trúc học sâu như CNN hoặc LSTM được giả định sẽ cải thiện thêm hiệu năng phân loại cảm xúc thông qua việc khai thác đồng thời đặc trưng ngữ nghĩa, cục bộ và tuần tự của văn bản. Ngoài ra, nghiên cứu cũng giả thuyết rằng một quy trình tiền xử lý dữ liệu phù hợp với đặc thù ngôn ngữ mạng tiếng Việt, bao gồm chuẩn hóa tiếng lóng và xử lý biểu tượng cảm xúc, có ảnh hưởng đáng kể đến độ chính xác và tính ổn định của các mô hình phân tích cảm xúc khi áp dụng trên dữ liệu bình luận trực tiếp.
+
+\section{Những đóng góp mới của đề tài}
+
+Đề tài đóng góp một nghiên cứu thực nghiệm có hệ thống trong việc đánh giá và so sánh hiệu quả của các mô hình phân tích cảm xúc tiếng Việt, từ các thuật toán học máy truyền thống đến các mô hình học sâu hiện đại. Thông qua việc thực hiện so sánh trực tiếp trên cùng tập dữ liệu và quy trình tiền xử lý thống nhất, nghiên cứu giúp làm rõ mức độ phù hợp của từng mô hình đối với dữ liệu bình luận trực tiếp mang tính ngắn gọn, không chuẩn hóa và nhiều nhiễu.
+
+Bên cạnh đó, đề tài đề xuất và áp dụng một quy trình tiền xử lý dữ liệu phù hợp với đặc thù ngôn ngữ mạng tiếng Việt, trong đó chú trọng chuẩn hóa từ viết tắt, tiếng lóng và khai thác thông tin từ biểu tượng cảm xúc thay vì loại bỏ hoàn toàn. Cách tiếp cận này góp phần cải thiện khả năng nhận diện cảm xúc của mô hình trong bối cảnh dữ liệu thực tế.
+
+Ngoài ra, việc sử dụng các bộ dữ liệu tiếng Việt công khai từ nền tảng Kaggle cùng với kết quả thực nghiệm chi tiết tạo thành một nguồn tham chiếu có giá trị cho các nghiên cứu tiếp theo, đặc biệt trong việc lựa chọn và triển khai mô hình phân tích cảm xúc cho các lĩnh vực như giáo dục, thương mại điện tử và chăm sóc khách hàng.
+
+\section{Cấu trúc bài nghiên cứu}
+
+Ngoài phần mở đầu, kết luận, tài liệu tham khảo và phụ lục, nội dung chính của báo cáo gồm 3 chương:
+
+\textbf{Chương 1: Cơ sở lý thuyết và tổng quan nghiên cứu.} Trình bày các khái niệm cơ bản về phân tích cảm xúc, ứng dụng trong xử lý ngôn ngữ tự nhiên, đặc thù tiếng Việt, các nghiên cứu liên quan, các độ đo đánh giá và xác định mục tiêu nghiên cứu của đề tài.
+
+\textbf{Chương 2: Phương pháp và mô hình nghiên cứu.} Mô tả bài toán phân tích cảm xúc, quy trình tiền xử lý dữ liệu tiếng Việt, các mô hình học máy, học sâu và mô hình đề xuất dựa trên PhoBERT, cùng với kiến trúc tổng thể của hệ thống.
+
+\textbf{Chương 3: Thực nghiệm và đánh giá.} Trình bày tập dữ liệu, thiết lập thực nghiệm, kết quả đạt được, so sánh hiệu năng giữa các mô hình và thảo luận kết quả nghiên cứu.
+
+\newpage
+
+% ========================================
+% CHƯƠNG 1: CƠ SỞ LÝ THUYẾT VÀ TỔNG QUAN NGHIÊN CỨU
+% ========================================
+% Khôi phục format đánh số: 1.1, 1.1.1, 1.1.1.1...
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thechapter.\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thechapter.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\chapter{Cơ sở lý thuyết và tổng quan nghiên cứu}
+\label{chap:chapter1}
+
+\section{Tổng quan về phân tích cảm xúc}
+
+Trong những năm gần đây, sự phát triển mạnh mẽ của Internet và các nền tảng mạng xã hội đã tạo ra một lượng lớn dữ liệu văn bản. Những dữ liệu này bao gồm các bình luận, đánh giá sản phẩm, bài đăng trên mạng xã hội và nhiều hình thức thể hiện ý kiến khác. Các nội dung này thường chứa đựng những thông tin quan trọng phản ánh cảm xúc, quan điểm và thái độ của người dùng đối với một sản phẩm, dịch vụ hoặc sự kiện cụ thể. Việc khai thác và phân tích các thông tin này có ý nghĩa lớn trong nhiều lĩnh vực như kinh doanh, marketing, chính trị và nghiên cứu xã hội.
+
+Phân tích cảm xúc (Sentiment Analysis) là một nhánh quan trọng trong lĩnh vực khai phá dữ liệu văn bản và xử lý ngôn ngữ tự nhiên. Mục tiêu chính của phân tích cảm xúc là xác định, trích xuất và phân loại các thông tin mang tính chủ quan từ dữ liệu văn bản. Thông qua việc áp dụng các phương pháp phân tích tự động, hệ thống có thể xác định thái độ của người viết đối với một đối tượng cụ thể, thường được phân loại thành các nhãn cảm xúc như tích cực (positive), tiêu cực (negative) hoặc trung lập (neutral).
+
+Theo các nghiên cứu trong lĩnh vực xử lý ngôn ngữ tự nhiên, phân tích cảm xúc có thể được thực hiện ở nhiều mức độ khác nhau:
+
+\begin{itemize}
+    \item \textbf{Mức tài liệu} (Document-level Sentiment Analysis): xác định cảm xúc chung của toàn bộ văn bản.
+    \item \textbf{Mức câu} (Sentence-level Sentiment Analysis): phân tích cảm xúc trong từng câu cụ thể của văn bản.
+    \item \textbf{Mức khía cạnh} (Aspect-based Sentiment Analysis): xác định cảm xúc đối với từng khía cạnh cụ thể của đối tượng được đề cập.
+\end{itemize}
+
+Trong thực tế, phân tích cảm xúc đã được ứng dụng rộng rãi trong nhiều lĩnh vực. Trong thương mại điện tử, doanh nghiệp có thể sử dụng các hệ thống phân tích cảm xúc để đánh giá phản hồi của khách hàng đối với sản phẩm hoặc dịch vụ. Trong lĩnh vực truyền thông xã hội, các tổ chức có thể theo dõi phản ứng của cộng đồng đối với các sự kiện hoặc chiến dịch truyền thông. Ngoài ra, phân tích cảm xúc cũng được ứng dụng trong phân tích thị trường, dự đoán xu hướng tiêu dùng và hỗ trợ ra quyết định.
+
+Tuy nhiên, việc phân tích cảm xúc từ dữ liệu văn bản không phải là một nhiệm vụ đơn giản. Các yếu tố như ngữ cảnh, sự mơ hồ trong ngôn ngữ, hiện tượng mỉa mai hoặc châm biếm có thể làm cho việc xác định cảm xúc trở nên phức tạp. Do đó, nhiều phương pháp và mô hình khác nhau đã được đề xuất nhằm cải thiện hiệu quả của các hệ thống phân tích cảm xúc.
+
+\section{Phân tích cảm xúc trong xử lý ngôn ngữ tự nhiên}
+
+Trong lĩnh vực xử lý ngôn ngữ tự nhiên (Natural Language Processing -- NLP), bài toán phân tích cảm xúc thường được xem là một bài toán phân loại văn bản. Nhiệm vụ của hệ thống là dự đoán nhãn cảm xúc của một văn bản dựa trên nội dung của văn bản đó.
+
+Một hệ thống phân tích cảm xúc thông thường bao gồm nhiều giai đoạn xử lý khác nhau, từ thu thập dữ liệu đến huấn luyện và đánh giá mô hình. Quy trình chung có thể được mô tả qua các bước chính sau:
+
+\subsection{Thu thập dữ liệu}
+
+Dữ liệu văn bản được thu thập từ nhiều nguồn khác nhau như mạng xã hội, diễn đàn trực tuyến, trang thương mại điện tử hoặc các bộ dữ liệu công khai. Các dữ liệu này thường được gán nhãn cảm xúc nhằm phục vụ cho quá trình huấn luyện mô hình học máy.
+
+\subsection{Tiền xử lý dữ liệu}
+
+Dữ liệu văn bản thô thường chứa nhiều yếu tố không cần thiết như ký tự đặc biệt, liên kết URL, emoji hoặc lỗi chính tả. Vì vậy, bước tiền xử lý đóng vai trò quan trọng trong việc chuẩn hóa dữ liệu trước khi đưa vào mô hình học máy. Các bước tiền xử lý phổ biến bao gồm:
+
+\begin{itemize}
+    \item Chuẩn hóa chữ hoa và chữ thường
+    \item Loại bỏ ký tự đặc biệt
+    \item Tách từ (tokenization)
+    \item Loại bỏ từ dừng (stopwords)
+    \item Chuẩn hóa từ viết tắt
+\end{itemize}
+
+\subsection{Biểu diễn văn bản}
+
+Máy tính không thể trực tiếp xử lý dữ liệu văn bản dưới dạng chuỗi ký tự. Do đó, văn bản cần được chuyển đổi thành dạng số thông qua các kỹ thuật biểu diễn đặc trưng. Một số phương pháp biểu diễn văn bản phổ biến bao gồm:
+
+\begin{itemize}
+    \item Bag-of-Words (BoW)
+    \item TF-IDF
+    \item Word Embedding (Word2Vec, GloVe)
+\end{itemize}
+
+\subsection{Huấn luyện mô hình}
+
+Sau khi dữ liệu được biểu diễn dưới dạng số, các thuật toán học máy hoặc học sâu sẽ được sử dụng để huấn luyện mô hình phân loại cảm xúc.
+
+\subsection{Đánh giá mô hình}
+
+Hiệu năng của mô hình được đánh giá thông qua các độ đo thống kê như Accuracy, Precision, Recall và F1-score.
+
+Trong giai đoạn đầu của nghiên cứu phân tích cảm xúc, các phương pháp học máy truyền thống như Naive Bayes, Logistic Regression và Support Vector Machine (SVM) được sử dụng phổ biến. Các phương pháp này thường đạt hiệu quả tốt với dữ liệu văn bản khi kết hợp với các kỹ thuật biểu diễn đặc trưng như TF-IDF.
+
+Tuy nhiên, các phương pháp học máy truyền thống có hạn chế trong việc nắm bắt ngữ nghĩa và ngữ cảnh của văn bản. Để khắc phục vấn đề này, các mô hình học sâu như Convolutional Neural Networks (CNN), Long Short-Term Memory (LSTM) và Bidirectional LSTM (BiLSTM) đã được áp dụng nhằm cải thiện khả năng học đặc trưng từ dữ liệu văn bản.
+
+Gần đây, các mô hình ngôn ngữ tiền huấn luyện dựa trên kiến trúc Transformer đã mang lại nhiều bước tiến quan trọng trong lĩnh vực xử lý ngôn ngữ tự nhiên. Các mô hình này có khả năng học biểu diễn ngữ nghĩa phức tạp và hiểu ngữ cảnh của văn bản tốt hơn so với các phương pháp trước đây.
+
+\section{Phân tích cảm xúc cho tiếng Việt}
+
+So với các ngôn ngữ phổ biến như tiếng Anh, nghiên cứu về phân tích cảm xúc cho tiếng Việt vẫn còn nhiều thách thức. Một trong những nguyên nhân chính là sự thiếu hụt các bộ dữ liệu gán nhãn chất lượng cao dành cho tiếng Việt.
+
+Tiếng Việt là một ngôn ngữ đơn lập với cấu trúc từ vựng và ngữ pháp đặc thù. Trong tiếng Việt, khoảng trắng được sử dụng để phân tách các âm tiết thay vì các từ hoàn chỉnh. Do đó, việc tách từ chính xác là một bước quan trọng trong quá trình xử lý ngôn ngữ tiếng Việt.
+
+Ngoài ra, dữ liệu tiếng Việt trên mạng xã hội thường có nhiều đặc điểm khác biệt so với văn bản chuẩn. Người dùng thường xuyên sử dụng:
+
+\begin{itemize}
+    \item Từ viết tắt
+    \item Tiếng lóng
+    \item Lỗi chính tả
+    \item Emoji
+    \item Biểu đạt cảm xúc phi chuẩn
+\end{itemize}
+
+Những đặc điểm này làm cho quá trình tiền xử lý và phân tích cảm xúc trở nên phức tạp hơn.
+
+Tuy nhiên, trong những năm gần đây, nhiều mô hình ngôn ngữ dành riêng cho tiếng Việt đã được phát triển. Các mô hình này được huấn luyện trên tập dữ liệu lớn và có khả năng biểu diễn ngữ nghĩa của văn bản tiếng Việt một cách hiệu quả hơn. Điều này đã góp phần cải thiện đáng kể hiệu năng của các hệ thống phân tích cảm xúc tiếng Việt.
+
+\section{Các nghiên cứu liên quan trong và ngoài nước}
+
+Trên thế giới, nghiên cứu về phân tích cảm xúc đã được quan tâm từ khá sớm và đạt được nhiều kết quả quan trọng. Các nghiên cứu ban đầu tập trung vào việc sử dụng các phương pháp dựa trên từ điển cảm xúc hoặc các thuật toán học máy truyền thống. Những phương pháp này thường sử dụng các đặc trưng thống kê từ văn bản để thực hiện phân loại cảm xúc.
+
+Sau đó, các mô hình học sâu đã được áp dụng rộng rãi trong lĩnh vực phân tích cảm xúc. Các mô hình như CNN, LSTM và BiLSTM cho phép hệ thống học được các đặc trưng ngữ nghĩa phức tạp từ dữ liệu văn bản mà không cần quá nhiều bước trích xuất đặc trưng thủ công.
+
+Gần đây, các mô hình Transformer như BERT và các biến thể của nó đã đạt được hiệu quả vượt trội trong nhiều nhiệm vụ xử lý ngôn ngữ tự nhiên, bao gồm cả phân tích cảm xúc.
+
+Tại Việt Nam, nhiều nghiên cứu đã được thực hiện nhằm áp dụng các mô hình học máy và học sâu vào bài toán phân tích cảm xúc tiếng Việt. Một số nghiên cứu sử dụng các mô hình học máy truyền thống kết hợp với TF-IDF, trong khi các nghiên cứu khác áp dụng các mô hình học sâu hoặc các mô hình ngôn ngữ tiền huấn luyện dành riêng cho tiếng Việt.
+
+Các kết quả thực nghiệm cho thấy việc sử dụng các mô hình ngôn ngữ tiền huấn luyện có thể cải thiện đáng kể hiệu năng của hệ thống phân tích cảm xúc tiếng Việt.
+
+\section{Các độ đo đánh giá trong bài toán phân tích cảm xúc}
+
+Để đánh giá hiệu quả của các mô hình phân tích cảm xúc, các nghiên cứu thường sử dụng một số độ đo thống kê phổ biến trong bài toán phân loại.
+
+\textbf{Accuracy:} Accuracy là tỷ lệ dự đoán đúng trên tổng số mẫu dữ liệu.
+
+\textbf{Precision:} Precision đo lường mức độ chính xác của các dự đoán thuộc một lớp nhất định.
+
+\textbf{Recall:} Recall thể hiện khả năng của mô hình trong việc phát hiện đúng các mẫu thuộc một lớp cụ thể.
+
+\textbf{F1-score:} F1-score là trung bình điều hòa của Precision và Recall, giúp đánh giá sự cân bằng giữa hai chỉ số này.
+
+Trong các bài toán phân loại cảm xúc với dữ liệu mất cân bằng, F1-score thường được xem là chỉ số quan trọng hơn so với Accuracy.
+
+\section{Dữ liệu và đặc thù dữ liệu mạng xã hội tiếng Việt}
+
+Dữ liệu mạng xã hội là một trong những nguồn dữ liệu quan trọng cho các nghiên cứu về phân tích cảm xúc. Tuy nhiên, loại dữ liệu này cũng chứa nhiều đặc điểm đặc thù khiến việc xử lý trở nên phức tạp.
+
+Một số đặc điểm phổ biến của dữ liệu mạng xã hội tiếng Việt bao gồm:
+
+\begin{itemize}
+    \item Văn bản ngắn và không có cấu trúc rõ ràng
+    \item Sử dụng nhiều từ viết tắt và tiếng lóng
+    \item Lỗi chính tả và cách viết không chuẩn
+    \item Sử dụng emoji và ký hiệu cảm xúc
+    \item Sự kết hợp nhiều cảm xúc trong cùng một câu
+\end{itemize}
+
+Những đặc điểm này làm cho việc xây dựng các hệ thống phân tích cảm xúc trở nên khó khăn hơn so với việc xử lý các văn bản chuẩn như bài báo hoặc tài liệu học thuật.
+
+\section{Vấn đề nghiên cứu và mục tiêu của đề tài}
+
+Mặc dù đã có nhiều nghiên cứu về phân tích cảm xúc, việc xử lý dữ liệu tiếng Việt trên mạng xã hội vẫn còn nhiều thách thức do đặc thù ngôn ngữ và dữ liệu nhiễu.
+
+Do đó, đề tài này tập trung vào việc nghiên cứu và đánh giá hiệu quả của các mô hình học máy trong bài toán phân tích cảm xúc tiếng Việt.
+
+Các mục tiêu chính của đề tài bao gồm:
+
+\begin{itemize}
+    \item Nghiên cứu các phương pháp tiền xử lý dữ liệu văn bản tiếng Việt
+    \item Triển khai các mô hình học máy trong bài toán phân loại cảm xúc
+    \item Đánh giá hiệu năng của các mô hình trên tập dữ liệu tiếng Việt
+    \item So sánh kết quả giữa các mô hình khác nhau
+\end{itemize}
+
+\section{Định hướng tiếp cận và đóng góp dự kiến của đề tài}
+
+Đề tài được thực hiện theo hướng tiếp cận thực nghiệm trong lĩnh vực học máy và xử lý ngôn ngữ tự nhiên.
+
+Cụ thể, nghiên cứu sẽ tiến hành:
+
+\begin{itemize}
+    \item Thu thập và xử lý dữ liệu văn bản tiếng Việt
+    \item Xây dựng pipeline tiền xử lý dữ liệu
+    \item Triển khai các mô hình học máy để phân loại cảm xúc
+    \item Đánh giá và so sánh hiệu năng của các mô hình
+\end{itemize}
+
+Kết quả nghiên cứu dự kiến sẽ cung cấp một cái nhìn tổng quan về hiệu quả của các mô hình học máy trong bài toán phân tích cảm xúc tiếng Việt, đồng thời đề xuất hướng tiếp cận phù hợp cho các nghiên cứu và ứng dụng trong tương lai.
+
+\section{Kết luận chương 1}
+
+Chương 1 đã trình bày tổng quan về bài toán phân tích cảm xúc, bao gồm các khái niệm cơ bản, vai trò của phân tích cảm xúc trong xử lý ngôn ngữ tự nhiên và những thách thức khi áp dụng cho tiếng Việt. Bên cạnh đó, chương cũng trình bày các nghiên cứu liên quan trong và ngoài nước, các độ đo đánh giá mô hình và đặc điểm của dữ liệu mạng xã hội tiếng Việt.
+
+Những nội dung được trình bày trong chương này đóng vai trò là nền tảng lý thuyết cho các chương tiếp theo của báo cáo. Trong chương tiếp theo, nghiên cứu sẽ tập trung vào việc mô tả phương pháp nghiên cứu, các mô hình học máy được sử dụng và quy trình thực nghiệm để đánh giá hiệu quả của các mô hình trong bài toán phân tích cảm xúc tiếng Việt.
+
+\newpage
+
+% ========================================
+% CHƯƠNG 2: PHƯƠNG PHÁP VÀ MÔ HÌNH NGHIÊN CỨU
+% ========================================
+\chapter{Phương pháp và mô hình nghiên cứu}
+\label{chap:chapter2}
+
+\section{Bài toán phân tích cảm xúc và mô hình hóa bài toán}
+
+\textbf{Phân tích cảm xúc (Sentiment Analysis)} được xác định là quá trình sử dụng các kỹ thuật xử lý ngôn ngữ tự nhiên (NLP), phân tích văn bản và học máy để nhận diện, trích xuất và phân loại các ý kiến hoặc cảm xúc được thể hiện trong văn bản. Mục tiêu cốt lõi của bài toán này là hiểu rõ hơn về thái độ, sắc thái cảm xúc và quan điểm của người dùng đối với một chủ đề, sản phẩm hoặc dịch vụ cụ thể thông qua các phản hồi trực tuyến. Trong bối cảnh các hệ thống thông minh, việc dự đoán chính xác tính phân cực của cảm xúc đóng vai trò then chốt trong việc nâng cao chất lượng dịch vụ và củng cố niềm tin của người dùng.
+
+Nghiên cứu này mô hình hóa bài toán dưới dạng \textbf{phân loại văn bản có giám sát (supervised text classification)}. Theo đó, mô hình sẽ được huấn luyện trên một tập dữ liệu đã gán nhãn để học cách ánh xạ giữa nội dung văn bản và nhãn cảm xúc tương ứng.
+
+\subsection{Biểu diễn bài toán}
+
+Bài toán phân tích cảm xúc được mô hình hóa dưới dạng \textbf{bài toán phân loại văn bản có giám sát}. Mục tiêu là xây dựng một mô hình có khả năng tự động gán nhãn cảm xúc cho các bình luận dựa trên dữ liệu đã được gán nhãn.
+
+Giả sử tập dữ liệu nghiên cứu là $\mathcal{D}$, gồm $n$ mẫu:
+
+\begin{equation}
+\mathcal{D} = \{ (x_1, y_1), (x_2, y_2), \ldots, (x_n, y_n) \}
+\end{equation}
+
+Trong đó:
+
+\begin{itemize}
+    \item \textbf{Đầu vào ($x_i$):} là nội dung văn bản của một bình luận. Sau khi thực hiện các bước tiền xử lý, văn bản được chuyển đổi thành chuỗi các \textit{token} để mô hình có thể xử lý.
+    \item \textbf{Đầu ra ($y_i$):} là nhãn cảm xúc tương ứng thuộc tập nhãn:
+\end{itemize}
+
+\begin{equation}
+\mathcal{Y} = \{ \text{Positive}, \text{Negative}, \text{Neutral} \}
+\end{equation}
+
+\begin{itemize}
+    \item \textbf{Mục tiêu:} tìm một hàm dự đoán $f$ sao cho:
+\end{itemize}
+
+\begin{equation}
+f(x) \rightarrow \hat{y}
+\end{equation}
+
+Trong đó $\hat{y}$ là nhãn cảm xúc do mô hình dự đoán. Mô hình sẽ được huấn luyện nhằm giảm sai lệch giữa nhãn dự đoán $\hat{y}$ và nhãn thực tế $y$.
+
+\subsection{Quy trình giải bài toán}
+
+Quá trình mô hình hóa bài toán được thực hiện theo các bước chính sau:
+
+\begin{itemize}
+    \item \textbf{Thu thập dữ liệu:} sử dụng các bộ dữ liệu bình luận tiếng Việt được công bố trên các nền tảng dữ liệu mở.
+    \item \textbf{Tiền xử lý dữ liệu:} làm sạch và chuẩn hóa văn bản nhằm giảm nhiễu và tăng tính nhất quán của dữ liệu.
+    \item \textbf{Biểu diễn văn bản:} chuyển đổi văn bản thành các dạng vector số để các mô hình học máy có thể xử lý.
+    \item \textbf{Huấn luyện mô hình:} sử dụng các thuật toán học máy hoặc học sâu để xây dựng mô hình phân loại cảm xúc.
+    \item \textbf{Đánh giá mô hình:} sử dụng các chỉ số đánh giá chuẩn để đo lường hiệu quả của từng mô hình.
+\end{itemize}
+
+\section{Quy trình tiền xử lý dữ liệu}
+
+Tiền xử lý dữ liệu đóng vai trò quan trọng trong bài toán phân tích cảm xúc, đặc biệt đối với dữ liệu bình luận trực tuyến tiếng Việt vốn chứa nhiều nhiễu và đặc thù ngôn ngữ phức tạp. Quy trình tiền xử lý được đề xuất bao gồm các bước sau:
+
+\subsection{Chuẩn hóa văn bản}
+
+Bước này thực hiện các chuyển đổi cơ bản để thống nhất định dạng văn bản:
+
+\begin{itemize}
+    \item Chuyển đổi toàn bộ văn bản sang chữ thường (lowercase) để giảm thiểu sự phân biệt không cần thiết.
+    \item Loại bỏ khoảng trắng dư thừa, xuống dòng không cần thiết.
+    \item Chuẩn hóa dấu câu, thay thế các ký tự đặc biệt không mong muốn.
+\end{itemize}
+
+\subsection{Loại bỏ ký tự đặc biệt}
+
+Loại bỏ các ký tự đặc biệt, HTML tags, URL, email addresses và các thành phần không mang ý nghĩa cảm xúc:
+
+\begin{itemize}
+    \item Loại bỏ URL: \texttt{http://}, \texttt{https://}, \texttt{www.}
+    \item Loại bỏ HTML tags: \texttt{<div>}, \texttt{<br/>}, \ldots
+    \item Loại bỏ email addresses và số điện thoại
+    \item Giữ lại các dấu câu có thể thể hiện cảm xúc như !, ?, \ldots
+\end{itemize}
+
+\subsection{Tách từ tiếng Việt}
+
+Tiếng Việt là ngôn ngữ đơn lập, việc tách từ đúng là rất quan trọng. Nghiên cứu sử dụng công cụ \textbf{VnCoreNLP} hoặc \textbf{underthesea} để thực hiện tách từ:
+
+\begin{itemize}
+    \item Sử dụng RDRSegmenter từ VnCoreNLP để phân tách từ thành phần
+    \item Xác định ranh giới từ trong câu tiếng Việt
+    \item Kết quả là danh sách các từ có nghĩa hoàn chỉnh
+\end{itemize}
+
+\subsection{Chuẩn hóa từ viết tắt và tiếng lóng}
+
+Dữ liệu mạng xã hội tiếng Việt chứa nhiều từ viết tắt và tiếng lóng. Bước này sử dụng từ điển tiền tích để thay thế:
+
+\begin{itemize}
+    \item \textit{kho} $\rightarrow$ \textit{không}
+    \item \textit{j, mình} $\rightarrow$ \textit{em}
+    \item \textit{sp} $\rightarrow$ \textit{sản phẩm}
+    \item \textit{ok, uhm} $\rightarrow$ các từ cảm tỏ sự đồng ý
+\end{itemize}
+
+\subsection{Xử lý biểu tượng cảm xúc (emoji)}
+
+Thay vì loại bỏ hoàn toàn emoji, nghiên cứu chuyển đổi chúng thành dạng văn bản tương ứng:
+
+\begin{itemize}
+    \item Các emoji tích cực (như mặt cười, lòng vàng, dấu like) $\rightarrow$ \textit{tích cực, vui vẻ}
+    \item Các emoji tiêu cực (như mặt buồn, mặt khóc, dấu giận) $\rightarrow$ \textit{tiêu cực, buồn}
+    \item Các emoji ngạc nhiên (như mặt ngạc nhiên, dấu chấm than) $\rightarrow$ \textit{ngạc nhiên}
+\end{itemize}
+
+Cách tiếp cận này giúp giữ lại thông tin cảm xúc quan trọng được thể hiện qua emoji.
+
+\subsection{Loại bỏ từ dừng (Stopwords)}
+
+Loại bỏ các từ không mang ý nghĩa phân loại như các giới từ, quan từ, trợ từ. Tuy nhiên, cần cân nhắc giữ lại một số từ quan trọng trong phân tích cảm xúc như:
+
+\begin{itemize}
+    \item Các từ phủ định: \textit{không, chưa, chẳng}
+    \item Các từ nhấn mạnh: \textit{rất, quá, quá trời}
+\end{itemize}
+
+\section{Các mô hình học máy truyền thống}
+
+Trong lĩnh vực xử lý ngôn ngữ tự nhiên, các mô hình học máy truyền thống thường được sử dụng như các \textbf{mô hình nền (baseline)} quan trọng nhằm đánh giá và so sánh hiệu năng với các kiến trúc học sâu hiện đại. Các phương pháp này thường dựa trên việc \textbf{trích xuất đặc trưng thủ công từ văn bản}, chẳng hạn như Bag-of-Words (BoW) hoặc TF-IDF, để chuyển đổi dữ liệu văn bản thô thành các vector số mà mô hình có thể xử lý.
+
+Mặc dù các mô hình học máy truyền thống không có khả năng học biểu diễn ngữ nghĩa sâu như các mô hình dựa trên mạng nơ-ron, chúng vẫn được sử dụng rộng rãi nhờ \textbf{tính đơn giản, tốc độ huấn luyện nhanh và chi phí tính toán thấp}. Trong nghiên cứu này, các mô hình học máy truyền thống được triển khai nhằm làm cơ sở so sánh với các phương pháp học sâu hiện đại. Ba thuật toán tiêu biểu được lựa chọn bao gồm \textbf{Naive Bayes, Support Vector Machine và Random Forest}.
+
+\subsection{Naive Bayes (NB)}
+
+Naive Bayes là một thuật toán phân loại xác suất dựa trên \textbf{định lý Bayes}, với giả định đơn giản hóa rằng các đặc trưng trong dữ liệu là \textbf{độc lập có điều kiện} với nhau. Trong bài toán phân loại văn bản, mỗi từ trong văn bản được xem như một đặc trưng độc lập góp phần xác định nhãn phân loại của văn bản.
+
+Nhờ cấu trúc đơn giản, Naive Bayes thường được đánh giá cao trong các bài toán xử lý văn bản với quy mô dữ liệu lớn. Thuật toán có khả năng huấn luyện nhanh, dễ triển khai và hoạt động hiệu quả khi kết hợp với các phương pháp biểu diễn văn bản như \textbf{Bag-of-Words} hoặc \textbf{TF-IDF}.
+
+Các ưu điểm chính của Naive Bayes bao gồm:
+
+\begin{itemize}
+    \item Cấu trúc mô hình đơn giản và dễ triển khai
+    \item Tốc độ huấn luyện nhanh
+    \item Hoạt động hiệu quả trên các tập dữ liệu văn bản lớn
+\end{itemize}
+
+Tuy nhiên, hạn chế lớn nhất của Naive Bayes là \textbf{giả định độc lập giữa các đặc trưng}, điều này thường không đúng trong ngôn ngữ tự nhiên. Do đó, mô hình gặp khó khăn trong việc nắm bắt các mối quan hệ ngữ nghĩa phức tạp giữa các từ hoặc các hiện tượng ngôn ngữ như \textbf{phủ định, mỉa mai hoặc ngữ cảnh dài}.
+
+\subsection{Support Vector Machine (SVM)}
+
+Support Vector Machine (SVM) là một trong những thuật toán phân loại mạnh mẽ và phổ biến nhất trong các bài toán phân loại văn bản. Mục tiêu của SVM là tìm một \textbf{siêu phẳng (hyperplane) tối ưu} trong không gian đặc trưng nhằm phân tách các lớp dữ liệu sao cho \textbf{khoảng cách biên (margin) giữa các lớp là lớn nhất}.
+
+Đối với dữ liệu văn bản, không gian đặc trưng thường có \textbf{số chiều rất lớn}, do đó SVM đặc biệt phù hợp với các bài toán xử lý ngôn ngữ tự nhiên. Trong nhiều nghiên cứu, SVM khi kết hợp với biểu diễn \textbf{TF-IDF} và kernel tuyến tính đã cho thấy hiệu quả cao trong các bài toán phân loại văn bản, bao gồm cả phân tích cảm xúc.
+
+Một số ưu điểm nổi bật của SVM gồm:
+
+\begin{itemize}
+    \item Khả năng hoạt động tốt trong không gian dữ liệu nhiều chiều
+    \item Khả năng tổng quát hóa tốt
+    \item Hiệu quả cao trong các bài toán phân loại văn bản
+\end{itemize}
+
+Tuy nhiên, SVM vẫn có một số hạn chế nhất định. Thuật toán này phụ thuộc nhiều vào \textbf{việc thiết kế đặc trưng đầu vào}, và không thể tự động học được các đặc trưng ngữ nghĩa sâu hoặc các mối quan hệ ngữ cảnh phức tạp như các mô hình học sâu hiện đại dựa trên kiến trúc Transformer.
+
+\subsection{Random Forest (RF)}
+
+Random Forest là một phương pháp \textbf{học tập hợp (ensemble learning)} được xây dựng dựa trên sự kết hợp của nhiều \textbf{cây quyết định (decision trees)}. Trong mô hình này, mỗi cây quyết định được huấn luyện trên một tập con khác nhau của dữ liệu huấn luyện, và kết quả dự đoán cuối cùng được xác định thông qua cơ chế \textbf{biểu quyết đa số (majority voting)}.
+
+Nhờ cơ chế kết hợp nhiều mô hình con, Random Forest có khả năng \textbf{giảm thiểu hiện tượng quá khớp (overfitting)} thường gặp trong các cây quyết định đơn lẻ. Ngoài ra, mô hình cũng có khả năng xử lý các mối quan hệ phi tuyến giữa các đặc trưng trong dữ liệu.
+
+Các ưu điểm chính của Random Forest bao gồm:
+
+\begin{itemize}
+    \item Giảm hiện tượng overfitting so với cây quyết định đơn lẻ
+    \item Khả năng mô hình hóa các quan hệ phi tuyến
+    \item Hoạt động ổn định trên nhiều loại dữ liệu
+\end{itemize}
+
+Tuy nhiên, khi số lượng cây trong mô hình tăng lên, \textbf{chi phí tính toán và yêu cầu bộ nhớ} của Random Forest cũng tăng theo. Điều này có thể ảnh hưởng đến hiệu năng khi xử lý các tập dữ liệu lớn.
+
+\section{Các mô hình học sâu (Deep Learning)}
+
+Sự phát triển của \textbf{học sâu (Deep Learning)} đã tạo ra bước tiến lớn trong lĩnh vực phân tích cảm xúc. Khác với các phương pháp học máy truyền thống vốn phụ thuộc vào việc trích xuất đặc trưng thủ công, các mô hình học sâu có khả năng \textbf{tự động học các biểu diễn đặc trưng từ dữ liệu} thông qua nhiều tầng mạng nơ-ron. Nhờ đó, mô hình có thể nắm bắt được các \textbf{mối quan hệ ngữ nghĩa và ngữ cảnh phức tạp} trong văn bản.
+
+Trong lĩnh vực xử lý ngôn ngữ tự nhiên, các mô hình học sâu thường sử dụng \textbf{lớp nhúng từ (word embedding)} để biểu diễn văn bản trong không gian vectơ nhiều chiều, sau đó áp dụng các kiến trúc mạng nơ-ron khác nhau để trích xuất đặc trưng và thực hiện phân loại. Một số kiến trúc phổ biến được sử dụng trong phân tích cảm xúc bao gồm \textbf{Convolutional Neural Network (CNN), Long Short-Term Memory (LSTM) và Bidirectional LSTM (BiLSTM)}.
+
+\subsection{Mạng nơ-ron tích chập (Convolutional Neural Network -- CNN)}
+
+Convolutional Neural Network (CNN) ban đầu được phát triển cho các bài toán xử lý ảnh, tuy nhiên sau đó đã được áp dụng thành công trong lĩnh vực xử lý văn bản và phân tích cảm xúc. Trong các bài toán này, CNN có khả năng \textbf{phát hiện các đặc trưng cục bộ trong văn bản}, chẳng hạn như các cụm từ hoặc cấu trúc ngữ pháp mang sắc thái cảm xúc.
+
+Trong xử lý văn bản, CNN thường sử dụng \textbf{các lớp tích chập một chiều (1D Convolutional layers)} với các bộ lọc (kernels) có kích thước khác nhau để phát hiện các mẫu từ vựng quan trọng, tương tự như việc phát hiện \textbf{n-grams} trong văn bản. Nhờ cơ chế này, mô hình có thể nhận diện các cụm từ thể hiện cảm xúc mạnh như ``rất tốt'', ``không hài lòng'' hoặc ``quá tệ''.
+
+Một mô hình CNN tiêu chuẩn cho bài toán phân loại văn bản thường bao gồm các thành phần sau:
+
+\begin{itemize}
+    \item \textbf{Embedding layer}: chuyển các từ trong câu thành các vectơ số trong không gian nhiều chiều.
+    \item \textbf{Convolution layer}: áp dụng các bộ lọc tích chập để trích xuất các đặc trưng cục bộ từ chuỗi từ.
+    \item \textbf{Pooling layer} (thường là \textit{Max-pooling}): giảm số chiều của đặc trưng và giữ lại các thông tin quan trọng nhất.
+    \item \textbf{Fully connected layer}: kết hợp các đặc trưng đã trích xuất để thực hiện phân loại cảm xúc.
+\end{itemize}
+
+Kiến trúc CNN giúp trích xuất hiệu quả các đặc trưng cục bộ từ văn bản, như minh họa trong Hình \ref{fig:cnn}.
+
+Nhờ khả năng phát hiện nhanh các mẫu đặc trưng quan trọng trong văn bản, CNN thường đạt hiệu quả tốt trong các bài toán phân loại văn bản có quy mô dữ liệu lớn.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/CNN text model.jpg}
+    \caption{Kiến trúc CNN dùng để trích xuất đặc trưng văn bản.}
+    \label{fig:cnn}
+\end{figure}
+
+\subsection{Mạng nơ-ron nhớ dài-ngắn (Long Short-Term Memory -- LSTM)}
+
+Long Short-Term Memory (LSTM) là một biến thể của mạng nơ-ron hồi tiếp \textbf{Recurrent Neural Network (RNN)}, được thiết kế nhằm khắc phục hạn chế của RNN truyền thống trong việc xử lý các chuỗi dữ liệu dài. Cụ thể, LSTM giải quyết vấn đề \textbf{triệt tiêu đạo hàm (vanishing gradient)}, giúp mô hình có khả năng ghi nhớ các phụ thuộc dài hạn trong dữ liệu tuần tự.
+
+Trong xử lý ngôn ngữ tự nhiên, LSTM đặc biệt phù hợp cho các nhiệm vụ liên quan đến chuỗi văn bản, bởi mô hình có thể \textbf{ghi nhớ ngữ cảnh của các từ xuất hiện trước đó trong câu}. Điều này cho phép LSTM hiểu rõ hơn mối quan hệ giữa các từ và ý nghĩa tổng thể của câu.
+
+Cơ chế hoạt động của LSTM dựa trên hệ thống \textbf{các cổng điều khiển (gating mechanism)} bao gồm:
+
+\begin{itemize}
+    \item \textbf{Input gate (cổng vào):} quyết định lượng thông tin mới được đưa vào bộ nhớ.
+    \item \textbf{Forget gate (cổng quên):} xác định thông tin nào trong bộ nhớ cũ cần được loại bỏ.
+    \item \textbf{Output gate (cổng ra):} quyết định phần thông tin nào sẽ được sử dụng làm đầu ra của mô hình.
+\end{itemize}
+
+Các cổng này phối hợp với \textbf{tế bào bộ nhớ (memory cell)} để kiểm soát luồng thông tin trong mạng, giúp LSTM có thể học và ghi nhớ các quan hệ ngữ nghĩa dài hạn trong câu hoặc đoạn văn bản.
+
+\subsection{LSTM hai chiều (Bidirectional LSTM -- BiLSTM)}
+
+Bidirectional LSTM (BiLSTM) là một mở rộng quan trọng của kiến trúc LSTM. Trong khi LSTM truyền thống chỉ xử lý chuỗi dữ liệu theo \textbf{một hướng từ trái sang phải}, BiLSTM xử lý dữ liệu theo \textbf{hai hướng đồng thời}:
+
+\begin{itemize}
+    \item hướng tiến (\textit{forward}): từ đầu câu đến cuối câu
+    \item hướng lùi (\textit{backward}): từ cuối câu về đầu câu
+\end{itemize}
+
+Nhờ cơ chế này, BiLSTM có khả năng khai thác thông tin ngữ cảnh từ \textbf{cả hai phía của câu}, giúp mô hình hiểu đầy đủ hơn ý nghĩa của từng từ trong văn bản.
+
+Điều này đặc biệt quan trọng trong bài toán phân tích cảm xúc, bởi ý nghĩa của một từ thường phụ thuộc vào các từ xung quanh. Ví dụ, các từ phủ định như ``không'', ``chưa'', ``chẳng'' có thể làm thay đổi hoàn toàn cực tính cảm xúc của từ đứng sau.
+
+Nhờ khả năng nắm bắt tốt các mối quan hệ ngữ nghĩa và ngữ cảnh phức tạp, BiLSTM đã trở thành một trong những kiến trúc học sâu phổ biến và hiệu quả trong nhiều bài toán xử lý ngôn ngữ tự nhiên, bao gồm \textbf{phân tích cảm xúc, phân loại văn bản và nhận dạng thực thể}. Kiến trúc chi tiết của BiLSTM được minh họa trong Hình \ref{fig:bilstm}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/BiLSTM architecture.jpg}
+    \caption{Kiến trúc BiLSTM cho mô hình hóa ngữ cảnh hai chiều.}
+    \label{fig:bilstm}
+\end{figure}
+
+\section{Các mô hình ngôn ngữ tiền huấn luyện và mô hình đề xuất dựa trên PhoBERT}
+
+Sự phát triển của các \textbf{mô hình ngôn ngữ tiền huấn luyện (Pre-trained Language Models)} dựa trên kiến trúc Transformer đã tạo ra bước tiến lớn trong lĩnh vực xử lý ngôn ngữ tự nhiên. Nhờ cơ chế \textbf{Self-Attention}, các mô hình này có khả năng học được các phụ thuộc ngữ cảnh xa trong văn bản và xử lý dữ liệu hiệu quả hơn so với các mô hình RNN truyền thống.
+
+Trong phân tích cảm xúc, các mô hình Transformer cho phép biểu diễn văn bản trong không gian ngữ nghĩa sâu, từ đó cải thiện đáng kể hiệu năng của hệ thống phân loại.
+
+\subsection{Mô hình PhoBERT}
+
+PhoBERT là một mô hình ngôn ngữ tiền huấn luyện được phát triển dành riêng cho tiếng Việt, dựa trên kiến trúc \textbf{RoBERTa}, một phiên bản cải tiến của BERT. Mô hình được huấn luyện trên một kho dữ liệu tiếng Việt rất lớn, bao gồm dữ liệu từ Wikipedia, báo chí và nhiều nguồn văn bản khác.
+
+Trong quá trình huấn luyện, PhoBERT sử dụng phương pháp \textbf{Byte Pair Encoding (BPE)} để xử lý từ vựng và kết hợp với công cụ \textbf{RDRSegmenter} trong thư viện VnCoreNLP để thực hiện tách từ tiếng Việt. Nhờ đó, mô hình có thể học được các biểu diễn ngữ nghĩa phong phú và phù hợp với đặc trưng của ngôn ngữ tiếng Việt.
+
+Các ưu điểm chính của PhoBERT bao gồm:
+
+\begin{itemize}
+    \item Khả năng hiểu \textbf{ngữ cảnh hai chiều} của câu
+    \item Học được \textbf{biểu diễn ngữ nghĩa sâu} của văn bản
+    \item Phù hợp với đặc trưng ngôn ngữ tiếng Việt
+\end{itemize}
+
+Trong các bài toán xử lý ngôn ngữ tự nhiên, PhoBERT thường được sử dụng như một \textbf{bộ trích xuất đặc trưng ngữ nghĩa} hoặc được \textbf{fine-tune trực tiếp} để thực hiện các nhiệm vụ như phân loại văn bản, phân tích cảm xúc hoặc nhận dạng thực thể.
+
+\subsection{Mô hình lai PhoBERT--CNN--LSTM}
+
+Để tận dụng ưu điểm của nhiều kiến trúc khác nhau, nghiên cứu này đề xuất sử dụng \textbf{mô hình lai PhoBERT--CNN--LSTM} cho bài toán phân tích cảm xúc.
+
+Trong kiến trúc này, mỗi thành phần đảm nhiệm một vai trò khác nhau:
+
+\begin{itemize}
+    \item \textbf{PhoBERT}: đóng vai trò bộ mã hóa ngữ nghĩa, trích xuất các đặc trưng ngữ cảnh sâu từ văn bản.
+    \item \textbf{CNN}: phát hiện các đặc trưng cục bộ trong câu, chẳng hạn như các cụm từ mang sắc thái cảm xúc mạnh.
+    \item \textbf{LSTM/BiLSTM}: mô hình hóa quan hệ tuần tự giữa các từ và nắm bắt các phụ thuộc dài hạn trong câu.
+\end{itemize}
+
+Sự kết hợp này giúp mô hình vừa hiểu được \textbf{ngữ cảnh toàn cục của văn bản}, vừa phát hiện được \textbf{các đặc trưng cảm xúc cục bộ} và \textbf{quan hệ ngữ nghĩa theo chuỗi}. Nhờ đó, mô hình có khả năng nhận diện cảm xúc hiệu quả hơn, đặc biệt đối với các \textbf{bình luận ngắn và dữ liệu mạng xã hội tiếng Việt} vốn thường chứa nhiều từ lóng, viết tắt và cấu trúc ngôn ngữ không chuẩn. Kiến trúc chi tiết của mô hình đề xuất được minh họa trong Hình \ref{fig:phobert-cnn-lstm}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/PhoBERT-CNN-LSTM architecture.jpg}
+    \caption{Kiến trúc mô hình PhoBERT-CNN-LSTM được đề xuất.}
+    \label{fig:phobert-cnn-lstm}
+\end{figure}
+
+\section{Kiến trúc tổng thể của hệ thống}
+
+Hệ thống phân tích cảm xúc được xây dựng theo kiến trúc gồm các thành phần chính sau:
+
+\begin{enumerate}
+    \item \textbf{Thu thập dữ liệu}
+    \begin{itemize}
+        \item Lấy dữ liệu từ các bộ dữ liệu công khai.
+    \end{itemize}
+    \item \textbf{Tiền xử lý dữ liệu}
+    \begin{itemize}
+        \item Chuẩn hóa văn bản
+        \item Tách từ tiếng Việt
+        \item Xử lý emoji và từ viết tắt.
+    \end{itemize}
+    \item \textbf{Biểu diễn văn bản}
+    \begin{itemize}
+        \item TF-IDF cho mô hình học máy truyền thống
+        \item Embedding từ PhoBERT cho mô hình học sâu.
+    \end{itemize}
+    \item \textbf{Huấn luyện mô hình}
+    \begin{itemize}
+        \item Huấn luyện các mô hình học máy và học sâu.
+    \end{itemize}
+    \item \textbf{Đánh giá mô hình}
+    \begin{itemize}
+        \item So sánh hiệu năng dựa trên các chỉ số đánh giá.
+    \end{itemize}
+\end{enumerate}
+
+Kết quả của hệ thống là nhãn cảm xúc tương ứng với mỗi bình luận. Pipeline tổng thể của hệ thống được minh họa trong Hình \ref{fig:pipeline}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/Pipeline hệ thống.jpg}
+    \caption{Pipeline tổng thể của hệ thống phân loại văn bản tiếng Việt.}
+    \label{fig:pipeline}
+\end{figure}
+
+\section{Kết luận chương 2}
+
+Chương 2 đã trình bày phương pháp nghiên cứu và các mô hình được sử dụng trong đề tài. Nội dung chương bao gồm quy trình tiền xử lý dữ liệu, các phương pháp biểu diễn văn bản, các mô hình học máy truyền thống và các mô hình học sâu hiện đại.
+
+Đặc biệt, chương đã giới thiệu mô hình ngôn ngữ tiền huấn luyện PhoBERT và mô hình lai PhoBERT-CNN-LSTM được đề xuất nhằm cải thiện hiệu quả phân tích cảm xúc cho tiếng Việt. Những nội dung này là cơ sở để tiến hành thực nghiệm và đánh giá hiệu năng của các mô hình trong chương tiếp theo.
+
+\chapter{Thực nghiệm và đánh giá}
+
+\textit{Nội dung chương này đang được cập nhật.}
+
+\newpage
+
+% ========================================
+% KẾT LUẬN VÀ KHUYẾN NGHỊ, DANH MỤC CÁC CÔNG TRÌNH, TÀI LIỆU THAM KHẢO, PHỤ LỤC
+% ========================================
+\noindent\textbf{\Large KẾT LUẬN VÀ KHUYẾN NGHỊ}
+\addcontentsline{toc}{chapter}{KẾT LUẬN VÀ KHUYẾN NGHỊ}
+
+\medskip\noindent\textbf{\Large DANH MỤC CÁC CÔNG TRÌNH CỦA TÁC GIẢ}
+\addcontentsline{toc}{chapter}{DANH MỤC CÁC CÔNG TRÌNH CỦA TÁC GIẢ}
+
+\medskip\noindent\textbf{\Large TÀI LIỆU THAM KHẢO}
+\addcontentsline{toc}{chapter}{TÀI LIỆU THAM KHẢO}
+
+\begin{enumerate}
+    \item A.-T. P. Nguyen, D.-K. Duong, and V.-D. Hoang, ``Sentiment Prediction Based on Deep Learning for Intelligent E-Learning Systems,'' J. Tech. Educ. Sci., vol. 20, no. 03, pp. 16--25, Aug. 2025, doi: 10.54644/jte.2025.1661.
+
+    \item T. L. Dinh and N. A. Le, ``Unsupervised clustering of Vietnamese positive and negative news using PhoBERT and DBSCAN,'' Indonesian Journal of Computer Science, vol. 14, no. 6, pp. 10207--10217, Dec. 2025, doi: 10.33022/ijcs.v14i6.5065.
+
+    \item D. Nguyen, T. Lau, H. A. Nguyen, T. Doan, H. Nguyen, S. Lu, and N. Tran, ``A hybrid PhoBERT-CNN-LSTM model for sentiment analysis of Vietnamese student feedback,'' Asian Journal of Research in Computer Science, vol. 18, no. 5, pp. 65--74, 2025, doi: 10.9734/ajrcos/2025/v18i5639.
+
+    \item T. T. Dung, L. N. Tung, B. N. Dung, and V. Huan, ``Emotion recognition in learners with emoji sentiment accompaniment using the PhoBERT model,'' HNUE Journal of Science (Natural Sciences), vol. 69, no. 3, pp. 46--56, 2024, doi: 10.18173/2354-1059.2024-0034.
+
+    \item N. M. Tan, N. B. Hung, and S. V. Valerievich, ``Fine-tuned PhoBERT for sentiment analysis of Vietnamese phone reviews,'' Can Tho University Journal of Innovation and Sustainable Development, vol. 16, Special Issue on ISDS, pp. 52--57, 2024, doi: 10.22144/ctujoisd.2024.322.
+
+    \item H. T. N. Tram, P. M. Dzuy, P. D. Dat, L. D. Tan, and H. K. Tu, ``Advancing emotion recognition in Vietnamese: A PhoBERT-based approach for enhanced interaction,'' TNU Journal of Science and Technology, vol. 230, no. 7, pp. 255--263, 2025, doi: 10.34238/tnu-jst.12889.
+
+    \item H. V. Tran, V. T. Bui, and L. Q. Tran, ``Expanding Vietnamese SentiWordNet to improve performance of Vietnamese sentiment analysis models,'' University of Engineering and Technology, Vietnam National University, Hanoi, Vietnam, 2024.
+\end{enumerate}
+
+\medskip\noindent\textbf{\Large PHỤ LỤC}
+\addcontentsline{toc}{chapter}{PHỤ LỤC}
+
+\end{document}

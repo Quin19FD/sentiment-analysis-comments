@@ -35,6 +35,9 @@
 \usepackage{amsmath, amssymb, amsfonts, amsthm}
 \usepackage{mathtools}
 
+% Number equations by chapter
+\numberwithin{equation}{chapter}
+
 % --- Graphics ---
 \usepackage{graphicx}
 \graphicspath{{images/}{figures/}}
@@ -69,11 +72,6 @@
 
 % --- Header / Footer ---
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-\fancyhf{}
-\fancyhead[L]{\leftmark}
-\fancyhead[R]{\thepage}
-\setlength{\headheight}{14pt}
 
 % --- Theorem environment ---
 \newtheorem{theorem}{Theorem}
@@ -99,6 +97,10 @@
   {\normalfont\fontsize{14}{16}\bfseries}
   {\thesubsection}{1em}{}
 
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{14}{16}\bfseries}
+  {\thesubsubsection}{1em}{}
+
 % --- Default font size ---
 \AtBeginDocument{\fontsize{14}{16}\selectfont}
 
@@ -106,9 +108,37 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    citecolor=green,
-    urlcolor=cyan,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=black,
     pdftitle={Phân tích cảm xúc người dùng dựa trên bình luận trực tuyến},
     pdfauthor={Đỗ Mai Anh, Nguyễn Hoàng Quyên}
+}
+
+% ===============================
+% PAGE NUMBERING SETUP
+% ===============================
+
+% Page style with centered page number at top
+\fancypagestyle{mainstyle}{
+    \fancyhf{}
+    \fancyhead[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot{}
+}
+
+% Plain style for chapter pages (also centered)
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot{}
+}
+
+% Front matter page style (Roman numerals, centered)
+\fancypagestyle{frontmatter}{
+    \fancyhf{}
+    \fancyhead[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \fancyfoot{}
 }
