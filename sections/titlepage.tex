@@ -1,6 +1,14 @@
 \begin{titlepage}
 \thispagestyle{empty}
 
+% ===== KHUNG VIỀN =====
+\begin{tikzpicture}[remember picture, overlay]
+    \draw[line width=1.2pt]
+    ($(current page.north west)+(3.5cm,-3cm)$)
+    rectangle
+    ($(current page.south east)+(-2cm,3cm)$);
+\end{tikzpicture}
+
 \vspace*{2.5cm}
 
 \begin{center}

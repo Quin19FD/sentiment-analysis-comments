@@ -61,9 +61,94 @@ Chúng em xin chân thành cảm ơn.
 \addcontentsline{toc}{chapter}{MỤC LỤC}
 \tableofcontents
 
-% ----- DANH MỤC HÌNH ẢNH (nếu có) -----
-% \addcontentsline{toc}{chapter}{DANH MỤC HÌNH ẢNH}
-% \listoffigures
+% ----- DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT -----
+\chapter*{DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT}
+\addcontentsline{toc}{chapter}{DANH MỤC KÝ HIỆU VÀ CHỮ VIẾT TẮT}
+\begin{longtable}{|>{\raggedright\arraybackslash}p{2.0cm}|>{\raggedright\arraybackslash}p{5.6cm}|>{\raggedright\arraybackslash}p{6.4cm}|}
+\hline
+\textbf{Ký hiệu} & \textbf{Tiếng Anh} & \textbf{Nghĩa tiếng Việt} \\
+\hline
+NLP & Natural Language Processing & Xử lý ngôn ngữ tự nhiên \\
+\hline
+CNN & Convolutional Neural Network & Mạng nơ-ron tích chập \\
+\hline
+LSTM & Long Short-Term Memory & Mạng nơ-ron nhớ dài-ngắn \\
+\hline
+BiLSTM & Bidirectional Long Short-Term Memory & Mạng nơ-ron nhớ dài-ngắn hai chiều \\
+\hline
+RNN & Recurrent Neural Network & Mạng nơ-ron hồi tiếp \\
+\hline
+SVM & Support Vector Machine & Máy véc-tơ hỗ trợ \\
+\hline
+NB & Naive Bayes & Naive Bayes \\
+\hline
+RF & Random Forest & Rừng ngẫu nhiên \\
+\hline
+BERT & Bidirectional Encoder Representations from Transformers & Mô hình ngôn ngữ BERT \\
+\hline
+RoBERTa & Robustly Optimized BERT Pretraining Approach & Phiên bản cải tiến của BERT \\
+\hline
+PhoBERT & Pre-trained language model for Vietnamese & Mô hình ngôn ngữ tiền huấn luyện cho tiếng Việt \\
+\hline
+TF-IDF & Term Frequency -- Inverse Document Frequency & Tần số từ -- nghịch đảo tần số tài liệu \\
+\hline
+BPE & Byte Pair Encoding & Mã hóa cặp byte \\
+\hline
+ML & Machine Learning & Học máy \\
+\hline
+DL & Deep Learning & Học sâu \\
+\hline
+BoW & Bag-of-Words & Túi từ \\
+\hline
+AUC & Area Under the Curve & Diện tích dưới đường cong \\
+\hline
+ROC & Receiver Operating Characteristic & Đường cong đặc trưng hoạt động của bộ thu \\
+\hline
+OvR & One-vs-Rest & Một-chống-còn-lại \\
+\hline
+GPU & Graphics Processing Unit & Bộ xử lý đồ họa \\
+\hline
+CPU & Central Processing Unit & Bộ xử lý trung tâm \\
+\hline
+RAM & Random Access Memory & Bộ nhớ truy cập ngẫu nhiên \\
+\hline
+VRAM & Video Random Access Memory & Bộ nhớ video \\
+\hline
+NFC & Normalization Form C & Chuẩn hóa Unicode dạng C \\
+\hline
+LLM & Large Language Model & Mô hình ngôn ngữ lớn \\
+\hline
+UIT-ViSFD & UIT Vietnamese Sentiment Food Dataset & Bộ dữ liệu cảm xúc ẩm thực tiếng Việt của UIT \\
+\hline
+AdamW & Adam with Decoupled Weight Decay & Bộ tối ưu hóa Adam cải tiến \\
+\hline
+ReLU & Rectified Linear Unit & Hàm kích hoạt tuyến tính hiệu chỉnh \\
+\hline
+FC & Fully Connected & Lớp kết nối đầy đủ \\
+\hline
+F1 & F1-score & Chỉ số đánh giá F1 \\
+\hline
+TP & True Positive & Dương tính thật \\
+\hline
+TN & True Negative & Âm tính thật \\
+\hline
+FP & False Positive & Dương tính giả \\
+\hline
+FN & False Negative & Âm tính giả \\
+\hline
+LoRA & Low-Rank Adaptation & Thích ứng hạng thấp \\
+\hline
+API & Application Programming Interface & Giao diện lập trình ứng dụng \\
+\hline
+\end{longtable}
+
+% ----- DANH MỤC HÌNH ẢNH -----
+\addcontentsline{toc}{chapter}{DANH MỤC HÌNH ẢNH}
+\listoffigures
+
+% ----- DANH MỤC BẢNG BIỂU -----
+\addcontentsline{toc}{chapter}{DANH MỤC BẢNG BIỂU}
+\listoftables
 
 % ========================================
 % PHẦN CHÍNH - Đánh số Ả Rập (1, 2, 3, ...)
@@ -683,13 +768,13 @@ Chương 2 đã trình bày phương pháp nghiên cứu và các mô hình đư
 \label{chap:chapter3}
 
 
-\section{3.1. Mô tả tập dữ liệu và cách xây dựng tập huấn luyện}
+\section{Mô tả tập dữ liệu và cách xây dựng tập huấn luyện}
 
 
 Trong bài toán học máy có giám sát, chất lượng và quy mô của tập dữ liệu đóng vai trò quyết định đối với hiệu năng của mô hình. Đối với bài toán phân tích cảm xúc tiếng Việt, việc lựa chọn bộ dữ liệu phù hợp đòi hỏi phải xem xét nhiều yếu tố như độ tin cậy của nhãn gán, sự đa dạng của các lĩnh vực, mức độ nhiễu trong văn bản cũng như tính đại diện cho ngôn ngữ thực tế trên mạng xã hội. Mục này trình bày chi tiết tiêu chí lựa chọn dữ liệu, mô tả từng bộ dữ liệu được sử dụng, phân tích thống kê, đặc thù ngôn ngữ, quy trình tiền xử lý và phương pháp xây dựng tập huấn luyện.
 
 
-\subsection{3.1.1. Tiêu chí lựa chọn và nguồn dữ liệu}
+\subsection{Tiêu chí lựa chọn và nguồn dữ liệu}
 
 
 Việc lựa chọn dữ liệu nghiên cứu được thực hiện dựa trên một bộ tiêu chí chặt chẽ nhằm đảm bảo tính khoa học, khả năng tái lập và giá trị thực tiễn của kết quả nghiên cứu. Các tiêu chí chính bao gồm:
@@ -713,7 +798,7 @@ Cuối cùng, dữ liệu phải được công khai trên các nền tảng d�
 Dựa trên các tiêu chí trên, nghiên cứu đã khảo sát và đánh giá nhiều bộ dữ liệu tiếng Việt hiện có. Quá trình khảo sát bao gồm việc tìm kiếm trên nền tảng Kaggle với các từ khóa liên quan đến phân tích cảm xúc tiếng Việt, tham khảo danh sách dữ liệu NLP tiếng Việt từ kho lưu trữ Awesome Vietnamese NLP, và xem xét các bộ dữ liệu được đề cập trong các bài báo khoa học gần đây. Kết quả khảo sát cho thấy ba bộ dữ liệu đáp ứng tốt nhất các tiêu chí đặt ra bao gồm: UIT-ViSFD (Vietnamese Sentiment Food Dataset), bộ dữ liệu đánh giá sản phẩm thương mại điện tử trên Shopee, và bộ dữ liệu phản hồi của sinh viên về các khóa học trực tuyến.
 
 
-\subsection{3.1.2. Mô tả chi tiết các bộ dữ liệu}
+\subsection{Mô tả chi tiết các bộ dữ liệu}
 
 
 \subsubsection{a) Bộ dữ liệu UIT-ViSFD (Vietietnamese Sentiment Food Dataset)}
@@ -758,7 +843,7 @@ Bộ dữ liệu này bao gồm khoảng 8.200 bình luận đã gán nhãn. Vi�
 Phân bố nhãn trong bộ dữ liệu giáo dục tương đối cân bằng hơn so với bộ dữ liệu thương mại điện tử: lớp Positive chiếm khoảng 42\%, lớp Negative chiếm khoảng 33\% và lớp Neutral chiếm khoảng 25\%. Sự cân bằng tốt hơn này có thể được giải thích bởi đặc thù của lĩnh vực giáo dục, nơi sinh viên có xu hướng đưa ra nhận xét đa chiều hơn, bao gồm cả điểm tích cực và tiêu cực trong cùng một đánh giá.
 
 
-\subsection{3.1.3. Quá trình chuẩn bị và gán nhãn dữ liệu}
+\subsection{Quá trình chuẩn bị và gán nhãn dữ liệu}
 
 
 Việc xây dựng tập dữ liệu chất lượng cao là một trong những công đoạn đòi hỏi nhiều công sức và thời gian nhất trong toàn bộ nghiên cứu. Mục này trình bày chi tiết quá trình chuẩn bị, làm sạch và gán nhãn dữ liệu mà nhóm nghiên cứu đã thực hiện.
@@ -794,7 +879,7 @@ Toàn bộ quá trình thu thập, làm sạch và kiểm tra nhãn dữ liệu 
 Công đoạn tốn nhiều công sức nhất là bước kiểm tra chéo nhãn, do yêu cầu cả hai thành viên phải độc lập đọc và đánh giá từng bình luận, sau đó đối chiếu kết quả với nhau. Đặc biệt, các bình luận thuộc nhóm Neutral hoặc chứa mỉa mai thường gây khó khăn nhất cho người gán nhãn, đòi hỏi sự thảo luận và phân tích ngữ cảnh kỹ lưỡng.
 
 
-\subsection{3.1.4. Thống kê và phân tích phân bố dữ liệu tổng hợp}
+\subsection{Thống kê và phân tích phân bố dữ liệu tổng hợp}
 
 
 Sau khi thu thập ba bộ dữ liệu, nghiên cứu tiến hành gộp dữ liệu thành một tập tổng hợp thống nhất. Trước khi gộp, các bước kiểm tra chất lượng được thực hiện bao gồm: loại bỏ các bình luận trùng lặp, loại bỏ bình luận chỉ chứa emoji hoặc ký tự đặc biệt không có nội dung văn bản, và loại bỏ các bình luận có độ dài dưới 2 từ không mang ý nghĩa cảm xúc rõ ràng (ví dụ: "ok", "hihi").
@@ -805,6 +890,7 @@ Kết quả sau khi gộp và làm sạch sơ bộ, tập dữ liệu tổng h�
 
 \begin{table}[h]
 \centering
+\caption{Phân bố dữ liệu theo nguồn và nhãn cảm xúc}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
 \textbf{Bộ dữ liệu} & \textbf{Tổng số mẫu} & \textbf{Positive} & \textbf{Negative} & \textbf{Neutral} \\
@@ -818,10 +904,10 @@ Student Feedback (Giáo dục) & 8.200 (100\%) & 3.444 (42,0\%) & 2.706 (33,0\%)
 Tổng cộng & 31.226 (100\%) & 14.551 (46,6\%) & 9.975 (32,0\%) & 6.700 (21,4\%) \\
 \hline
 \end{tabular}
+\normalsize
 \end{table}
 
 
-\textbf{Bảng 3.1. Phân bố dữ liệu theo nguồn và nhãn cảm xúc.}
 
 
 Có thể nhận thấy tập dữ liệu tổng hợp có sự mất cân bằng nhẹ giữa các nhãn, với tỷ lệ Positive gần gấp đôi Neutral. Để giải quyết vấn đề này, nghiên cứu xem xét hai phương án: (1) sử dụng trọng số lớp (class weights) trong hàm mất mát để bù đắp sự mất cân bằng, và (2) áp dụng kỹ thuật tăng cường dữ liệu (data augmentation) như dịch ngược (back-translation) và thay thế từ đồng nghĩa cho lớp thiểu số. Kết quả cho thấy việc sử dụng trọng số lớp mang lại hiệu quả ổn định hơn so với tăng cường dữ liệu, do các phương pháp tăng cường dữ liệu trên tiếng Việt vẫn còn hạn chế về chất lượng.
@@ -832,6 +918,7 @@ Bên cạnh phân bố nhãn, nghiên cứu cũng tiến hành phân tích đặ
 
 \begin{table}[h]
 \centering
+\caption{Thống kê độ dài văn bản trong tập dữ liệu (đơn vị: từ)}
 \begin{tabular}{|l|c|}
 \hline
 \textbf{Chỉ số thống kê} & \textbf{Giá trị} \\
@@ -851,10 +938,10 @@ Phân vị thứ 25 (Q1) & 14 từ \\
 Phân vị thứ 75 (Q3) & 52 từ \\
 \hline
 \end{tabular}
+\normalsize
 \end{table}
 
 
-\textbf{Bảng 3.2. Thống kê độ dài văn bản trong tập dữ liệu (đơn vị: từ)}
 
 
 Phân tích cho thấy phân bố độ dài văn bản có dạng lệch phải (right-skewed), với phần lớn bình luận tập trung ở khoảng 10 đến 50 từ. Khoảng 15\% bình luận có độ dài dưới 5 từ, chủ yếu là các phản hồi ngắn gọn trên nền tảng thương mại điện tử. Ngược lại, khoảng 8\% bình luận có độ dài vượt quá 100 từ, phần lớn đến từ bộ dữ liệu phản hồi giáo dục. Sự đa dạng về độ dài này đòi hỏi mô hình phải có khả năng xử lý hiệu quả cả bình luận ngắn (thiếu ngữ cảnh) và bình luận dài (chứa nhiều thông tin và có thể đan xen nhiều cảm xúc).
@@ -863,7 +950,7 @@ Phân tích cho thấy phân bố độ dài văn bản có dạng lệch phải
 Nghiên cứu cũng phân tích kích thước từ vựng trong tập dữ liệu. Trước tiền xử lý, tập dữ liệu chứa 42.568 từ vựng duy nhất. Sau khi tách từ bằng VnCoreNLP, số lượng từ ghép (compound words) được tạo ra là khoảng 8.900 từ, chẳng hạn "sinh\_viên", "chất\_lượng", "thương\_mại\_điện\_tử". Kích thước từ vựng lớn cùng với sự hiện diện của nhiều từ viết tắt, từ lóng và lỗi chính tả đặt ra thách thức đáng kể cho việc xây dựng mô hình phân loại.
 
 
-\subsection{3.1.4. Phân tích đặc thù ngôn ngữ trong dữ liệu}
+\subsection{Phân tích đặc thù ngôn ngữ trong dữ liệu}
 
 
 Để hiểu rõ hơn về các thách thức trong việc xử lý dữ liệu tiếng Việt, nghiên cứu tiến hành phân tích chi tiết các hiện tượng ngôn ngữ đặc thù xuất hiện trong tập dữ liệu. Phân tích được thực hiện bằng cách lấy mẫu ngẫu nhiên 2.000 bình luận từ mỗi bộ dữ liệu và gán nhãn thủ công các hiện tượng ngôn ngữ xuất hiện. Kết quả phân tích được tổng hợp trong Bảng 3.3.
@@ -871,6 +958,7 @@ Nghiên cứu cũng phân tích kích thước từ vựng trong tập dữ li�
 
 \begin{table}[h]
 \centering
+\caption{Tỷ lệ xuất hiện các hiện tượng ngôn ngữ đặc thù trong tập dữ liệu}
 \begin{tabular}{|l|c|c|}
 \hline
 \textbf{Hiện tượng ngôn ngữ} & \textbf{Tỷ lệ} & \textbf{Ví dụ} \\
@@ -892,10 +980,10 @@ Từ vùng miền & 11,6\% & tui/mình, bữa/ngày, ngọt/xanh \\
 Mỉa mai \& châm biếm & 8,7\% & "Giao hàng nhanh lắm, 2 tuần mới nhận" \\
 \hline
 \end{tabular}
+\normalsize
 \end{table}
 
 
-\textbf{Bảng 3.3. Tỷ lệ xuất hiện các hiện tượng ngôn ngữ đặc thù trong tập dữ liệu}
 
 
 Kết quả phân tích cho thấy từ viết tắt là hiện tượng phổ biến nhất với 67,3\% bình luận chứa ít nhất một từ viết tắt. Điều này phản ánh thói quen giao tiếp nhanh trên các nền tảng trực tuyến của người dùng Việt Nam. Đặc biệt, trong môi trường thương mại điện tử, người dùng thường viết ngắn gọn để tiết kiệm thời gian, dẫn đến sự xuất hiện của nhiều biến thể viết tắt cho cùng một từ, ví dụ: "không" có thể được viết dưới dạng "ko", "k", "hok", "hem", "ks", "kh", "kg".
@@ -907,7 +995,7 @@ Emoji xuất hiện trong hơn một nửa số bình luận, đóng vai trò qu
 Hiện tượng mỉa mai, dù chỉ chiếm 8,7\%, lại là một trong những nguyên nhân chính gây ra sai sót phân loại. Các bình luận mỉa mai thường sử dụng từ ngữ mang nghĩa tích cực nhưng trong ngữ cảnh tiêu cực, ví dụ: "Sản phẩm tuyệt vời lắm, dùng 1 ngày đã hỏng", "Ship nhanh như rùa bò vậy". Nhận diện hiện tượng này đòi hỏi mô hình phải có khả năng hiểu ngữ cảnh sâu, không chỉ dựa vào từ vựng đơn lẻ.
 
 
-\subsection{3.1.5. Quy trình tiền xử lý dữ liệu chi tiết}
+\subsection{Quy trình tiền xử lý dữ liệu chi tiết}
 
 
 Dựa trên phân tích đặc thù ngôn ngữ ở mục 3.1.4, nghiên cứu xây dựng một quy trình tiền xử lý dữ liệu chuyên biệt cho tiếng Việt gồm 7 bước tuần tự. Mỗi bước được thiết kế để giải quyết một loại nhiễu cụ thể trong dữ liệu mạng xã hội, đồng thời bảo toàn tối đa thông tin cảm xúc có giá trị cho mô hình phân loại.
@@ -940,7 +1028,7 @@ Bước 7: Loại bỏ từ dừng (Stopwords Removal). Từ dừng là các t�
 Để đánh giá tác động của quy trình tiền xử lý, nghiên cứu tiến hành thử nghiệm ablation study, trong đó từng bước tiền xử lý được loại bỏ lần lượt để đo lường mức độ ảnh hưởng của từng bước đến hiệu năng mô hình. Kết quả chi tiết sẽ được trình bày trong mục 3.5.
 
 
-\subsection{3.1.6. Xây dựng tập huấn luyện, xác thực và kiểm thử}
+\subsection{Xây dựng tập huấn luyện, xác thực và kiểm thử}
 
 
 Sau khi hoàn tất quy trình tiền xử lý, dữ liệu được chia thành ba tập con phục vụ cho các mục đích khác nhau: tập huấn luyện (train set) để tối ưu tham số mô hình, tập xác thực (validation set) để điều chỉnh siêu tham số và ngăn chặn quá khớp, và tập kiểm thử (test set) để đánh giá hiệu năng cuối cùng.
@@ -960,6 +1048,7 @@ Phân bố chi tiết của các tập dữ liệu sau khi chia được trình 
 
 \begin{table}[h]
 \centering
+\caption{Phân bố dữ liệu sau khi chia tập}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
 \textbf{Tập dữ liệu} & \textbf{Số mẫu} & \textbf{Positive} & \textbf{Negative} & \textbf{Neutral} \\
@@ -974,7 +1063,6 @@ Kiểm thử (10\%) & 3.123 & 1.456 (46,6\%) & 997 (32,0\%) & 670 (21,4\%) \\
 \end{table}
 
 
-\textbf{Bảng 3.4. Phân bố dữ liệu sau khi chia tập.}
 
 
 Ngoài ra, để đảm bảo tính khách quan của quá trình đánh giá, nghiên cứu áp dụng nguyên tắc không được phép sử dụng tập kiểm thử trong bất kỳ giai đoạn nào của quá trình huấn luyện hay điều chỉnh siêu tham số. Tập xác thực được sử dụng để theo dõi hiện tượng quá khớp (early stopping), điều chỉnh tốc độ học (learning rate scheduling) và lựa chọn mô hình cuối cùng. Tập kiểm thử chỉ được sử dụng một lần duy nhất ở cuối quá trình nghiên cứu để báo cáo kết quả đánh giá cuối cùng.
@@ -989,13 +1077,13 @@ Ngoài ra, để đảm bảo tính khách quan của quá trình đánh giá, n
 Như vậy, mục 3.1 đã trình bày chi tiết về nguồn gốc, đặc điểm thống kê, đặc thù ngôn ngữ, quy trình tiền xử lý và phương pháp xây dựng tập dữ liệu cho nghiên cứu. Tập dữ liệu tổng hợp gồm 31.226 bình luận tiếng Việt từ ba lĩnh vực khác nhau, kết hợp với quy trình tiền xử lý chuyên biệt, tạo nền tảng vững chắc cho các bước thực nghiệm và đánh giá mô hình ở các mục tiếp theo.
 
 
-\section{3.2. Thiết lập thực nghiệm}
+\section{Thiết lập thực nghiệm}
 
 
 Thiết lập thực nghiệm là một bước quan trọng nhằm đảm bảo tính khả thi, khả năng tái lập và tính công bằng trong việc so sánh các mô hình. Mục này trình bày chi tiết về môi trường phần cứng và phần mềm, biểu diễn đặc trưng cho từng nhóm mô hình, thiết lập siêu tham số với cơ sở lý thuyết, chiến lược huấn luyện, và phương pháp đánh giá được sử dụng trong toàn bộ nghiên cứu.
 
 
-\subsection{3.2.1. Môi trường phần cứng và phần mềm}
+\subsection{Môi trường phần cứng và phần mềm}
 
 
 Tất cả các thí nghiệm được thực hiện trên một hệ thống có cấu hình phần cứng và phần mềm được mô tả chi tiết dưới đây. Việc ghi nhận môi trường thực nghiệm là cần thiết để đảm bảo tính tái lập của nghiên cứu và giải thích các yếu tố liên quan đến thời gian huấn luyện, khả năng sử dụng bộ nhớ và khả năng mở rộng của các mô hình.
@@ -1012,6 +1100,7 @@ Danh sách các thư viện chính và phiên bản tương ứng được trìn
 
 \begin{table}[h]
 \centering
+\caption{Danh sách thư viện và phiên bản sử dụng trong nghiên cứu}
 \begin{tabular}{|l|c|c|}
 \hline
 \textbf{Thư viện} & \textbf{Phiên bản} & \textbf{Mục đích sử dụng} \\
@@ -1040,13 +1129,12 @@ emoji & 2.8.0 & Chuyển đổi emoji thành văn bản \\
 \end{table}
 
 
-\textbf{Bảng 3.5. Danh sách thư viện và phiên bản sử dụng trong nghiên cứu.}
 
 
 Việc sử dụng các thư viện với phiên bản cụ thể được ghi nhận nhằm đảm bảo rằng các kết quả nghiên cứu có thể được tái lập chính xác. Trong trường hợp cần triển khai trên hệ thống khác, phiên bản CUDA và PyTorch cần được đảm bảo tương thích để tránh sai lệch kết quả do sự khác biệt trong triển khai kernel GPU.
 
 
-\subsection{3.2.2. Phương pháp biểu diễn đặc trưng}
+\subsection{Phương pháp biểu diễn đặc trưng}
 
 
 Một yếu tố quan trọng ảnh hưởng trực tiếp đến hiệu năng của mô hình phân loại là phương pháp biểu diễn đặc trưng (feature representation). Do các thuật toán học máy không thể xử lý trực tiếp dữ liệu văn bản, việc chuyển đổi văn bản thành dạng vector số là bước bắt buộc. Trong nghiên cứu này, hai phương pháp biểu diễn đặc trưng được sử dụng tương ứng với hai nhóm mô hình: TF-IDF cho các mô hình học máy truyền thống và subword embedding từ PhoBERT cho các mô hình học sâu.
@@ -1088,7 +1176,7 @@ Mỗi mẫu dữ liệu sau khi tokenize được biểu diễn dưới dạng b
 Về mặt kích thước mô hình, PhoBERT-base có khoảng 135 triệu tham số, bao gồm 12 tầng Transformer, 768 đơn vị ẩn, 12 đầu attention và kích thước từ vựng 64.000 subword tokens. Với cấu hình này, lượng bộ nhớ VRAM cần thiết cho một batch 32 mẫu với max\_seq\_length 128 là khoảng 4,2 GB, nằm trong giới hạn 6 GB của RTX 3060.
 
 
-\subsection{3.2.3. Thiết lập siêu tham số và cơ sở lựa chọn}
+\subsection{Thiết lập siêu tham số và cơ sở lựa chọn}
 
 
 Siêu tham số (hyperparameter) là các tham số không được học trực tiếp từ dữ liệu mà cần được thiết lập trước quá trình huấn luyện. Việc lựa chọn siêu tham số phù hợp có ảnh hưởng đáng kể đến hiệu năng và khả năng tổng quát hóa của mô hình. Trong nghiên cứu này, siêu tham số được lựa chọn dựa trên kết hợp giữa kinh nghiệm từ các nghiên cứu trước đây, khuyến nghị từ tài liệu chính thức của các thư viện, và kết quả thử nghiệm trên tập xác thực.
@@ -1144,55 +1232,30 @@ Tầng phân loại cuối cùng (classification head) bao gồm một lớp ful
 
 Bảng 3.6 tóm tắt toàn bộ các siêu tham số được sử dụng cho tất cả các mô hình trong nghiên cứu
 
-
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|c|}
+\caption{Tổng hợp siêu tham số của các mô hình}
+\small
+\begin{tabular}{|p{3.1cm}|p{10.8cm}|}
 \hline
 \textbf{Mô hình} & \textbf{Siêu tham số chính} \\
 \hline
-Naive Bayes &  \\
+Naive Bayes (MultinomialNB) & Alpha (Laplace smoothing): 1.0; Biểu diễn TF-IDF: max\_features=10000, ngram=(1,2), min\_df=2 \\
+\hline
+SVM (linear) & Kernel: linear, C=1.0; Biểu diễn TF-IDF: max\_features=10000, ngram=(1,2), min\_df=2 \\
+\hline
+Random Forest & n\_estimators=200, max\_depth=None, min\_samples\_split=5, criterion=entropy; Biểu diễn TF-IDF: max\_features=10000, ngram=(1,2), min\_df=2 \\
+\hline
+PhoBERT (fine-tune) & Mô hình nền: vinai/phobert-base (135M tham số); max\_seq\_length=128, batch size=32; learning rate=2e-5; optimizer=AdamW; weight decay=0.01; warmup=10\%; epochs=10; early stopping patience=3 \\
+\hline
+PhoBERT-CNN-LSTM (lai) & PhoBERT như mô hình fine-tune; CNN: 3 nhóm $\times$ 128 filters, kernel=[3,4,5], ReLU; LSTM: hidden=256, dropout=0.3; FC: 512$\rightarrow$3, dropout=0.5; learning rate=1e-5; epochs=15; early stopping=3 \\
 \hline
 \end{tabular}
+\normalsize
 \end{table}
 
-(MultinomialNB) | Alpha (Laplace smoothing): 1.0
 
-Biểu diễn: TF-IDF, max\_features=10000, ngram=(1,2), min\_df=2 |
-
-(linear) | Kernel: linear, C: 1.0
-
-Biểu diễn: TF-IDF, max\_features=10000, ngram=(1,2), min\_df=2 |
-
-min\_samples\_split: 5, criterion: entropy
-
-Biểu diễn: TF-IDF, max\_features=10000, ngram=(1,2), min\_df=2 |
-
-(fine-tune) | Mô hình nền: vinai/phobert-base (135M tham số)
-
-max\_seq\_length: 128, Batch size: 32
-
-Learning rate: 2e-5, Optimizer: AdamW
-
-Weight decay: 0.01, Warmup: 10\%, Epochs: 10
-
-Early stopping patience: 3 |
-
-(lai) | PhoBERT: giống mô hình PhoBERT fine-tune
-
-CNN: 3 nhóm × 128 filters, kernel=[3,4,5], ReLU
-
-LSTM: hidden=256, dropout=0.3
-
-FC: 512→3, dropout=0.5
-
-LR: 1e-5, Epochs: 15, Early stopping: 3 |
-
-
-\textbf{Bảng 3.6. Tổng hợp siêu tham số của các mô hình.}
-
-
-\subsection{3.2.4. Chiến lược huấn luyện}
+\subsection{Chiến lược huấn luyện}
 
 
 Nghiên cứu áp dụng các chiến lược huấn luyện khác nhau cho hai nhóm mô hình, phản ánh sự khác biệt về bản chất giữa học máy truyền thống và học sâu.
@@ -1213,7 +1276,7 @@ Ngoài ra, nghiên cứu áp dụng kỹ thuật gradient clipping với ngưỡ
 Nghiên cứu cũng ghi nhận thời gian huấn luyện cho từng mô hình để so sánh chi phí tính toán. Kết quả cho thấy: Naive Bayes mất khoảng 2 giây, SVM mất khoảng 15 giây, Random Forest mất khoảng 45 giây, PhoBERT fine-tune mất khoảng 52 phút (6 epoch thực tế), và PhoBERT-CNN-LSTM mất khoảng 78 phút (7 epoch thực tế). Kết quả chi tiết về thời gian huấn luyện sẽ được trình bày trong Bảng 3.7 ở mục 3.4.
 
 
-\subsection{3.2.5. Phương pháp đánh giá}
+\subsection{Phương pháp đánh giá}
 
 
 Để đánh giá hiệu năng của các mô hình phân loại cảm xúc, nghiên cứu sử dụng một hệ thống các chỉ số đánh giá đa chiều, kết hợp giữa các độ đo định lượng và phân tích định tính. Việc sử dụng nhiều phương pháp đánh giá khác nhau giúp cung cấp cái nhìn toàn diện về khả năng phân loại của từng mô hình, bao gồm cả điểm mạnh và điểm yếu cụ thể.
@@ -1270,43 +1333,37 @@ Ngoài các chỉ số định lượng, nghiên cứu tiến hành phân tích 
 Như vậy, mục 3.2 đã trình bày chi tiết thiết lập thực nghiệm bao gồm môi trường phần cứng và phần mềm, phương pháp biểu diễn đặc trưng (TF-IDF và PhoBERT subword embedding), siêu tham số với cơ sở lựa chọn cho từng mô hình, chiến lược huấn luyện và phương pháp đánh giá đa chiều. Những thiết lập này tạo cơ sở vững chắc cho việc tiến hành thực nghiệm và đảm bảo tính công bằng, khả năng tái lập của kết quả nghiên cứu.
 
 
-\section{3.3. Kết quả thực nghiệm}
+\section{Kết quả thực nghiệm}
 
 
 Mục này trình bày chi tiết kết quả thực nghiệm của năm mô hình phân tích cảm xúc trên tập dữ liệu tiếng Việt tổng hợp gồm 31.226 mẫu. Kết quả được báo cáo theo từng nhóm mô hình: học máy truyền thống (mục 3.3.1), học sâu dựa trên PhoBERT (mục 3.3.2) và mô hình lai PhoBERT-CNN-LSTM (mục 3.3.3). Đối với mỗi mô hình, nghiên cứu báo cáo kết quả trên cả tập huấn luyện và tập kiểm thử, kết hợp với phân tích quá trình hội tụ, ma trận nhầm lẫn và kết quả kiểm định chéo.
 
 
-\subsection{3.3.1. Kết quả của các mô hình học máy truyền thống}
+\subsection{Kết quả của các mô hình học máy truyền thống}
 
 
 Ba mô hình học máy truyền thống bao gồm Naive Bayes, Support Vector Machine (SVM) và Random Forest được huấn luyện trên tập dữ liệu đã được biểu diễn bằng TF-IDF với 10.000 đặc trưng unigram và bigram. Tất cả các mô hình được huấn luyện trên tập huấn luyện (24.980 mẫu) và đánh giá trên tập kiểm thử (3.123 mẫu). Kết quả chi tiết được trình bày trong Bảng 3.7.
 
 
-(macro) | Recall
-
-(macro) | F1
-
-(macro) | F1
-
-(weighted) | Thời gian
-
-huấn luyện |
-
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|l|l|l|}
+\scriptsize
+\caption{Kết quả đánh giá các mô hình học máy truyền thống trên tập kiểm thử}
+\begin{tabular}{|p{2.2cm}|c|c|c|c|c|p{1.6cm}|}
 \hline
-\textbf{-----} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} \\
+\textbf{Mô hình} & \textbf{Accuracy} & \textbf{Precision (macro)} & \textbf{Recall (macro)} & \textbf{F1 (macro)} & \textbf{F1 (weighted)} & \textbf{Thời gian huấn luyện} \\
+\hline
+Naive Bayes & 0.7214 & 0.7050 & 0.7214 & 0.7089 & 0.7134 & 2 giây \\
 \hline
 SVM (linear) & 0.7856 & 0.7780 & 0.7856 & 0.7795 & 0.7821 & 15 giây \\
 \hline
 Random Forest & 0.7543 & 0.7412 & 0.7543 & 0.7460 & 0.7498 & 45 giây \\
 \hline
 \end{tabular}
+\normalsize
 \end{table}
 
 
-\textbf{Bảng 3.7. Kết quả đánh giá các mô hình học máy truyền thống trên tập kiểm thử.}
 
 
 \textbf{a) Phân tích kết quả mô hình Naive Bayes}
@@ -1351,29 +1408,29 @@ So sánh với SVM, Random Forest có ưu điểm trong việc phát hiện các
 Để đánh giá tính ổn định của kết quả, nghiên cứu tiến hành 5-fold stratified cross validation trên toàn bộ tập dữ liệu. Kết quả được trình bày trong Bảng 3.8.
 
 
-trung bình | Độ lệch chuẩn | Khoảng biến thiên |
-
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|}
+\caption{Kết quả 5-fold cross validation của các mô hình học máy truyền thống}
+\begin{tabular}{|l|c|c|c|}
 \hline
-\textbf{-----} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} \\
+\textbf{Mô hình} & \textbf{F1 macro trung bình} & \textbf{Độ lệch chuẩn} & \textbf{Khoảng biến thiên} \\
 \hline
-SVM (linear) & 0.7748 & 0.0064 & [0.7656 – 0.7834] \\
+Naive Bayes & 0.7012 & 0.0089 & [0.6898 -- 0.7145] \\
 \hline
-Random Forest & 0.7385 & 0.0112 & [0.7214 – 0.7561] \\
+SVM (linear) & 0.7748 & 0.0064 & [0.7656 -- 0.7834] \\
+\hline
+Random Forest & 0.7385 & 0.0112 & [0.7214 -- 0.7561] \\
 \hline
 \end{tabular}
 \end{table}
 
 
-\textbf{Bảng 3.8. Kết quả 5-fold cross validation của các mô hình học máy truyền thống.}
 
 
 Kết quả cross validation xác nhận thứ tự hiệu năng SVM \> Random Forest \> Naive Bayes là nhất quán trên tất cả các fold, với độ lệch chuẩn rất nhỏ (dưới 0.012). Điều này cho thấy kết quả đánh giá không phụ thuộc vào cách chia cụ thể của tập huấn luyện và tập kiểm thử, củng cố tính đáng tin cậy của kết quả nghiên cứu. SVM có độ lệch chuẩn thấp nhất (0.0064), phản ánh tính ổn định cao nhất trong ba mô hình.
 
 
-\subsection{3.3.2. Kết quả của mô hình học sâu PhoBERT}
+\subsection{Kết quả của mô hình học sâu PhoBERT}
 
 
 Mô hình PhoBERT (vinai/phobert-base) được fine-tune trực tiếp trên tập dữ liệu huấn luyện tiếng Việt. Quá trình fine-tuning điều chỉnh toàn bộ tham số của mô hình (full fine-tuning) thay vì chỉ điều chỉnh tầng phân loại, cho phép mô hình thích nghi biểu diễn ngữ nghĩa với đặc thù của dữ liệu bình luận cảm xúc tiếng Việt.
@@ -1394,22 +1451,15 @@ Hiện tượng validation loss bắt đầu tăng sau epoch 6 trong khi trainin
 Kết quả đánh giá của mô hình PhoBERT trên tập kiểm thử (3.123 mẫu) được trình bày chi tiết trong Bảng 3.9.
 
 
-\textbf{Bảng 3.9. Kết quả đánh giá mô hình PhoBERT trên tập kiểm thử.}
-
-
-(macro) | Recall
-
-(macro) | F1-score
-
-(macro) | F1-score
-
-(weighted) |
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|l|}
+\caption{Kết quả đánh giá mô hình PhoBERT trên tập kiểm thử}
+\begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{-----} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} \\
+\textbf{Accuracy} & \textbf{Precision (macro)} & \textbf{Recall (macro)} & \textbf{F1-score (macro)} & \textbf{F1-score (weighted)} \\
+\hline
+0.8647 & 0.8590 & 0.8647 & 0.8612 & 0.8653 \\
 \hline
 \end{tabular}
 \end{table}
@@ -1420,6 +1470,7 @@ Kết quả chi tiết theo từng lớp cảm xúc được trình bày trong B
 
 \begin{table}[h]
 \centering
+\caption{Kết quả PhoBERT theo từng lớp cảm xúc}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
 \textbf{Lớp} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Số mẫu} \\
@@ -1434,7 +1485,6 @@ Neutral & 0.8427 & 0.8254 & 0.8340 & 670 \\
 \end{table}
 
 
-\textbf{Bảng 3.10. Kết quả PhoBERT theo từng lớp cảm xúc.}
 
 
 Nhìn chung, PhoBERT đạt hiệu năng vượt trội so với tất cả các mô hình học máy truyền thống. So với mô hình truyền thống tốt nhất (SVM), PhoBERT cải thiện F1-score macro từ 0.7795 lên 0.8612, tức là mức tăng tuyệt đối 8,17\% và mức tăng tương đối 10,5\%. Sự cải thiện này khẳng định vai trò then chốt của mô hình ngôn ngữ tiền huấn luyện trong việc biểu diễn ngữ nghĩa và ngữ cảnh sâu của văn bản tiếng Việt, điều mà các phương pháp biểu diễn truyền thống như TF-IDF không thể đạt được.
@@ -1461,7 +1511,7 @@ Lớp Neutral (670 mẫu): 553 mẫu được phân loại đúng (82,5\%). Đâ
 Kết quả ROC-AUC theo phương pháp One-vs-Rest cho thấy khả năng phân biệt của PhoBERT rất tốt trên tất cả các lớp. Cụ thể: lớp Positive đạt AUC = 0.9412, lớp Negative đạt AUC = 0.9287, và lớp Neutral đạt AUC = 0.9034. Tất cả các giá trị AUC đều vượt 0.9, cho thấy mô hình có khả năng phân biệt mạnh mẽ giữa mỗi lớp cảm xúc và các lớp còn lại. Giá trị AUC thấp nhất thuộc về lớp Neutral, phù hợp với nhận định rằng đây là lớp khó phân loại nhất. Tuy nhiên, AUC = 0.9034 vẫn là mức rất tốt, cho thấy ngay cả với lớp khó nhất, xác suất dự đoán của mô hình vẫn có chất lượng đáng tin cậy.
 
 
-\subsection{3.3.3. Kết quả của mô hình lai PhoBERT-CNN-LSTM}
+\subsection{Kết quả của mô hình lai PhoBERT-CNN-LSTM}
 
 
 Mô hình lai PhoBERT-CNN-LSTM được xây dựng theo kiến trúc đã trình bày ở Chương 2, trong đó PhoBERT đóng vai trò bộ mã hóa ngữ nghĩa, các lớp CNN trích xuất đặc trưng cục bộ và lớp BiLSTM mô hình hóa quan hệ tuần tự. Mô hình được huấn luyện với cùng thiết lập siêu tham số như PhoBERT, bổ sung thêm các tham số đặc thù của CNN và LSTM.
@@ -1482,25 +1532,19 @@ Mô hình lai PhoBERT-CNN-LSTM có quá trình hội tụ tương tự PhoBERT n
 Kết quả đánh giá của mô hình lai PhoBERT-CNN-LSTM trên tập kiểm thử được trình bày trong Bảng 3.11.
 
 
-(macro) | Recall
-
-(macro) | F1-score
-
-(macro) | F1-score
-
-(weighted) |
-
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|l|}
+\caption{Kết quả đánh giá mô hình PhoBERT-CNN-LSTM trên tập kiểm thử}
+\begin{tabular}{|c|c|c|c|c|}
 \hline
-\textbf{-----} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} \\
+\textbf{Accuracy} & \textbf{Precision (macro)} & \textbf{Recall (macro)} & \textbf{F1-score (macro)} & \textbf{F1-score (weighted)} \\
+\hline
+0.8790 & 0.8745 & 0.8790 & 0.8763 & 0.8798 \\
 \hline
 \end{tabular}
 \end{table}
 
 
-\textbf{Bảng 3.11. Kết quả đánh giá mô hình PhoBERT-CNN-LSTM trên tập kiểm thử.}
 
 
 Kết quả chi tiết theo từng lớp cảm xúc được trình bày trong Bảng 3.12.
@@ -1508,6 +1552,7 @@ Kết quả chi tiết theo từng lớp cảm xúc được trình bày trong B
 
 \begin{table}[h]
 \centering
+\caption{Kết quả PhoBERT-CNN-LSTM theo từng lớp cảm xúc}
 \begin{tabular}{|l|c|c|c|c|}
 \hline
 \textbf{Lớp} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Số mẫu} \\
@@ -1522,7 +1567,6 @@ Neutral & 0.8589 & 0.8448 & 0.8518 & 670 \\
 \end{table}
 
 
-\textbf{Bảng 3.12. Kết quả PhoBERT-CNN-LSTM theo từng lớp cảm xúc.}
 
 
 Mô hình lai đạt hiệu năng cao nhất trong tất cả các mô hình được thử nghiệm với F1-score macro 0.8763. So với PhoBERT đơn thuần (F1 = 0.8612), mô hình lai cải thiện 1,51\% tuyệt đối và 1,75\% tương đối. Mặc dù mức cải thiện không quá lớn, sự cải thiện này nhất quán trên cả ba lớp cảm xúc và đáng kể về mặt thống kê, như sẽ được phân tích ở phần kiểm định chéo.
@@ -1548,6 +1592,7 @@ Sự nhầm lẫn giữa các lớp cụ thể như sau: Positive bị nhầm th
 
 \begin{table}[h]
 \centering
+\caption{Kết quả ablation study trên kiến trúc mô hình lai}
 \begin{tabular}{|l|c|c|c|}
 \hline
 \textbf{Kiến trúc} & \textbf{Accuracy} & \textbf{F1 macro} & \textbf{Cải thiện F1} \\
@@ -1564,7 +1609,6 @@ PhoBERT \+ CNN \+ LSTM & 0.8790 & 0.8763 & \+1,51\% \\
 \end{table}
 
 
-\textbf{Bảng 3.13. Kết quả ablation study trên kiến trúc mô hình lai.}
 
 
 Kết quả ablation cho thấy cả CNN và LSTM đều đóng góp tích cực vào hiệu năng của mô hình. Lớp CNN đơn lẻ cải thiện F1 0.72\%, nhiều hơn lớp LSTM đơn lẻ (0.53\%). Điều này cho thấy việc phát hiện các đặc trưng cục bộ (cụm từ mang sắc thái cảm xúc) đóng vai trò quan trọng hơn so với việc mô hình hóa quan hệ tuần tự trong bài toán phân tích cảm xúc với bình luận ngắn.
@@ -1579,13 +1623,14 @@ Khi kết hợp cả CNN và LSTM, mức cải thiện (1.51\%) lớn hơn tổn
 Kết quả 5-fold stratified cross validation của hai mô hình học sâu được trình bày trong Bảng 3.14.
 
 
-trung bình | Độ lệch chuẩn |
-
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|}
+\caption{Kết quả 5-fold cross validation của các mô hình học sâu}
+\begin{tabular}{|l|c|c|}
 \hline
-\textbf{-----} & \textbf{:---:} & \textbf{:---:} \\
+\textbf{Mô hình} & \textbf{F1 macro trung bình} & \textbf{Độ lệch chuẩn} \\
+\hline
+PhoBERT (fine-tune) & 0.8548 & 0.0091 \\
 \hline
 PhoBERT-CNN-LSTM & 0.8694 & 0.0087 \\
 \hline
@@ -1593,7 +1638,6 @@ PhoBERT-CNN-LSTM & 0.8694 & 0.0087 \\
 \end{table}
 
 
-\textbf{Bảng 3.14. Kết quả 5-fold cross validation của các mô hình học sâu.}
 
 
 Kết quả cross validation cho thấy sự vượt trội của mô hình lai so với PhoBERT đơn thuần là nhất quán trên tất cả 5 fold, với chênh lệch F1-score trung bình là 1,46\%. Độ lệch chuẩn của cả hai mô hình đều rất nhỏ (dưới 0.01), cho thấy tính ổn định cao. PhoBERT-CNN-LSTM có độ lệch chuẩn nhẹ thấp hơn (0.0087 vs. 0.0091), cho thấy mô hình lai có tính ổn định tương đương hoặc nhỉnh hơn so với PhoBERT mặc dù có kiến trúc phức tạp hơn.
@@ -1605,22 +1649,15 @@ Kết quả cross validation cho thấy sự vượt trội của mô hình lai 
 Nghiên cứu cũng báo cáo kết quả ROC-AUC One-vs-Rest cho tất cả năm mô hình, được trình bày trong Bảng 3.15.
 
 
-\textbf{Bảng 3.15. Kết quả ROC-AUC (One-vs-Rest) của tất cả các mô hình.}
-
-
-Positive | AUC
-
-Negative | AUC
-
-Neutral | AUC
-
-trung bình |
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|l|}
+\caption{Kết quả ROC-AUC (One-vs-Rest) của tất cả các mô hình}
+\begin{tabular}{|l|c|c|c|c|}
 \hline
-\textbf{-----} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} \\
+\textbf{Mô hình} & \textbf{AUC Positive} & \textbf{AUC Negative} & \textbf{AUC Neutral} & \textbf{AUC trung bình} \\
+\hline
+Naive Bayes & 0.8623 & 0.8412 & 0.7845 & 0.8293 \\
 \hline
 SVM & 0.9012 & 0.8834 & 0.8456 & 0.8767 \\
 \hline
@@ -1640,47 +1677,41 @@ Kết quả ROC-AUC cho thấy mô hình lai PhoBERT-CNN-LSTM đạt AUC trung b
 Như vậy, mục 3.3 đã trình bày chi tiết kết quả thực nghiệm của tất cả năm mô hình. Kết quả cho thấy thứ tự hiệu năng từ cao đến thấp: PhoBERT-CNN-LSTM (F1 = 0.8763) \> PhoBERT (F1 = 0.8612) \> SVM (F1 = 0.7795) \> Random Forest (F1 = 0.7460) \> Naive Bayes (F1 = 0.7089). Kết quả kiểm định chéo 5-fold xác nhận sự nhất quán của các kết quả này. Mục tiếp theo sẽ tiến hành so sánh toàn diện và phân tích chuyên sâu hơn về kết quả của tất cả các mô hình.
 
 
-\section{3.4. So sánh hiệu năng giữa các mô hình}
+\section{So sánh hiệu năng giữa các mô hình}
 
 
 Mục này tiến hành so sánh toàn diện hiệu năng của tất cả năm mô hình phân tích cảm xúc trên cùng tập kiểm thử (3.123 mẫu), dưới nhiều góc độ: hiệu năng phân loại tổng thể (mục 3.4.1), hiệu năng theo từng lớp cảm xúc (mục 3.4.2), chi phí tính toán và thời gian xử lý (mục 3.4.3), và so sánh với các nghiên cứu liên quan (mục 3.4.4). Việc so sánh đa chiều giúp đưa ra đánh giá khách quan về sự đánh đổi (trade-off) giữa hiệu năng chính xác và chi phí tài nguyên, từ đó đề xuất mô hình phù hợp cho từng bối cảnh ứng dụng cụ thể.
 
 
-\subsection{3.4.1. So sánh hiệu năng phân loại tổng thể}
+\subsection{So sánh hiệu năng phân loại tổng thể}
 
 
 Bảng 3.16 trình bày kết quả so sánh toàn diện hiệu năng của năm mô hình trên tập kiểm thử, bao gồm tất cả các chỉ số đánh giá chính.
 
 
-(macro) | Recall
-
-(macro) | F1
-
-(macro) | F1
-
-(weighted) | AUC
-
-trung bình |
-
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|l|l|l|}
+\scriptsize
+\caption{So sánh toàn diện hiệu năng năm mô hình trên tập kiểm thử}
+\begin{tabular}{|p{2.4cm}|c|c|c|c|c|c|}
 \hline
-\textbf{-----} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} \\
+\textbf{Mô hình} & \textbf{Accuracy} & \textbf{Precision (macro)} & \textbf{Recall (macro)} & \textbf{F1 (macro)} & \textbf{F1 (weighted)} & \textbf{AUC trung bình} \\
 \hline
-Random Forest \+ TF-IDF & 0.7543 & 0.7412 & 0.7543 & 0.7460 & 0.7498 & 0.8596 \\
+Naive Bayes + TF-IDF & 0.7214 & 0.7050 & 0.7214 & 0.7089 & 0.7134 & 0.8293 \\
 \hline
-SVM \+ TF-IDF & 0.7856 & 0.7780 & 0.7856 & 0.7795 & 0.7821 & 0.8767 \\
+Random Forest + TF-IDF & 0.7543 & 0.7412 & 0.7543 & 0.7460 & 0.7498 & 0.8596 \\
+\hline
+SVM + TF-IDF & 0.7856 & 0.7780 & 0.7856 & 0.7795 & 0.7821 & 0.8767 \\
 \hline
 PhoBERT (fine-tune) & 0.8647 & 0.8590 & 0.8647 & 0.8612 & 0.8653 & 0.9244 \\
 \hline
 PhoBERT-CNN-LSTM & 0.8790 & 0.8745 & 0.8790 & 0.8763 & 0.8798 & 0.9367 \\
 \hline
 \end{tabular}
+\normalsize
 \end{table}
 
 
-\textbf{Bảng 3.16. So sánh toàn diện hiệu năng năm mô hình trên tập kiểm thử.}
 
 
 Từ Bảng 3.16, có thể rút ra một số nhận xét quan trọng về hiệu năng phân loại tổng thể.
@@ -1701,33 +1732,33 @@ Thứ tư, về khoảng cách giữa F1 macro và F1 weighted. Đối với t�
 Bảng 3.17 trình bày kết quả 5-fold stratified cross validation tổng hợp cho tất cả năm mô hình, cung cấp thêm thông tin về tính ổn định và độ tin cậy của kết quả.
 
 
-trung bình | Độ lệch chuẩn | Khoảng biến thiên |
-
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|}
+\caption{Tổng hợp kết quả 5-fold cross validation}
+\begin{tabular}{|l|c|c|c|}
 \hline
-\textbf{-----} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} \\
+\textbf{Mô hình} & \textbf{F1 macro trung bình} & \textbf{Độ lệch chuẩn} & \textbf{Khoảng biến thiên} \\
 \hline
-Random Forest & 0.7385 & 0.0112 & [0.7214 – 0.7561] \\
+Naive Bayes & 0.7012 & 0.0089 & [0.6898 -- 0.7145] \\
 \hline
-SVM & 0.7748 & 0.0064 & [0.7656 – 0.7834] \\
+Random Forest & 0.7385 & 0.0112 & [0.7214 -- 0.7561] \\
 \hline
-PhoBERT & 0.8548 & 0.0091 & [0.8412 – 0.8667] \\
+SVM & 0.7748 & 0.0064 & [0.7656 -- 0.7834] \\
 \hline
-PhoBERT-CNN-LSTM & 0.8694 & 0.0087 & [0.8572 – 0.8814] \\
+PhoBERT & 0.8548 & 0.0091 & [0.8412 -- 0.8667] \\
+\hline
+PhoBERT-CNN-LSTM & 0.8694 & 0.0087 & [0.8572 -- 0.8814] \\
 \hline
 \end{tabular}
 \end{table}
 
 
-\textbf{Bảng 3.17. Tổng hợp kết quả 5-fold cross validation.}
 
 
 Kết quả cross validation cho thấy khoảng biến thiên (range) của các mô hình học sâu không chồng lấn với khoảng biến thiên của các mô hình truyền thống, tức là ngay cả ở fold tốt nhất, SVM (0.7834) vẫn thấp hơn PhoBERT ở fold tồi nhất (0.8412). Điều này khẳng định sự vượt trội của các mô hình học sâu là mang tính hệ thống, không phải do ngẫu nhiên.
 
 
-\subsection{3.4.2. So sánh hiệu năng theo từng lớp cảm xúc}
+\subsection{So sánh hiệu năng theo từng lớp cảm xúc}
 
 
 Việc đánh giá hiệu năng tổng thể có thể che giấu những khác biệt quan trọng trong khả năng nhận diện từng loại cảm xúc cụ thể. Mục này phân tích chi tiết hiệu năng của từng mô hình trên từng lớp cảm xúc để làm rõ điểm mạnh và điểm yếu đặc thù.
@@ -1738,6 +1769,7 @@ Bảng 3.18 trình bày F1-score của từng mô hình trên từng lớp cảm
 
 \begin{table}[h]
 \centering
+\caption{F1-score theo từng lớp cảm xúc của năm mô hình}
 \begin{tabular}{|l|c|c|c|}
 \hline
 \textbf{Mô hình} & \textbf{Positive} & \textbf{Negative} & \textbf{Neutral} \\
@@ -1756,7 +1788,6 @@ PhoBERT-CNN-LSTM & 0.9028 & 0.8639 & 0.8518 \\
 \end{table}
 
 
-\textbf{Bảng 3.18. F1-score theo từng lớp cảm xúc của năm mô hình.}
 
 
 Từ Bảng 3.18, có thể rút ra một số nhận xét quan trọng về hiệu năng theo lớp.
@@ -1789,21 +1820,20 @@ Nguyên nhân lớp Neutral khó nhận diện được phân tích chi tiết q
 Một chỉ số quan trọng để đánh giá sự công bằng của mô hình là chênh lệch F1 giữa lớp tốt nhất và lớp tồi nhất (max-min gap). Kết quả cho thấy: Naive Bayes có gap = 0.1173 (Positive 0.7621 \- Neutral 0.6448), Random Forest gap = 0.1209, SVM gap = 0.1014, PhoBERT gap = 0.0565, PhoBERT-CNN-LSTM gap = 0.0510. Xu hướng rõ ràng là các mô hình học sâu có gap nhỏ hơn đáng kể so với mô hình truyền thống (0.05-0.06 so với 0.10-0.12), cho thấy chúng phân loại công bằng hơn giữa các lớp cảm xúc. PhoBERT-CNN-LSTM có gap nhỏ nhất (0.0510), tức là hiệu năng giữa ba lớp cảm xúc gần như đồng đều, đây là một ưu điểm quan trọng trong bối cảnh ứng dụng thực tế khi cần phân loại chính xác cả ba loại cảm xúc.
 
 
-\subsection{3.4.3. So sánh chi phí tính toán và thời gian xử lý}
+\subsection{So sánh chi phí tính toán và thời gian xử lý}
 
 
 Bên cạnh hiệu năng phân loại, chi phí tính toán là yếu tố quan trọng cần xem xét khi lựa chọn mô hình cho ứng dụng thực tế. Mục này so sánh các mô hình dựa trên thời gian huấn luyện, thời gian suy luận (inference time), kích thước mô hình và yêu cầu phần cứng. Kết quả được trình bày trong Bảng 3.19.
 
 
-(3.123 mẫu) | Suy luận
-
-/mẫu | Kích thước |
-
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|l|}
+\caption{So sánh chi phí tính toán của các mô hình}
+\begin{tabular}{|l|c|c|c|c|}
 \hline
-\textbf{-----} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} \\
+\textbf{Mô hình} & \textbf{Huấn luyện} & \textbf{Suy luận (3.123 mẫu)} & \textbf{Suy luận / mẫu} & \textbf{Kích thước} \\
+\hline
+Naive Bayes & 2 giây & 0.3 giây & 0.096 ms & \~2 MB \\
 \hline
 SVM & 15 giây & 1.2 giây & 0.384 ms & \~15 MB \\
 \hline
@@ -1817,7 +1847,6 @@ PhoBERT-CNN-LSTM & 78 phút & 34 giây & 10.890 ms & \~590 MB \\
 \end{table}
 
 
-\textbf{Bảng 3.19. So sánh chi phí tính toán của các mô hình.}
 
 
 Từ Bảng 3.19, có thể rút ra một số nhận xét về chi phí tính toán.
@@ -1838,7 +1867,7 @@ Thứ tư, về yêu cầu phần cứng. Các mô hình truyền thống có th
 Như vậy, xét về chi phí tính toán, có sự đánh đổi rõ rệt giữa hiệu năng phân loại và tài nguyên cần thiết. Nếu ưu tiên hiệu năng chính xác cao nhất, PhoBERT-CNN-LSTM là lựa chọn tối ưu. Nếu ưu tiên tốc độ và chi phí thấp (ví dụ: triển khai trên thiết bị biên hoặc môi trường không có GPU), SVM là lựa chọn tốt nhất trong nhóm mô hình truyền thống, đạt F1 = 0.7795 với thời gian huấn luyện chỉ 15 giây và suy luận nhanh.
 
 
-\subsection{3.4.4. So sánh với các nghiên cứu liên quan}
+\subsection{So sánh với các nghiên cứu liên quan}
 
 
 Để đánh giá kết quả nghiên cứu trong bối cảnh rộng hơn, mục này so sánh kết quả đạt được với các nghiên cứu phân tích cảm xúc tiếng Việt trước đây. Việc so sánh cần được thực hiện cẩn thận do sự khác biệt về tập dữ liệu, nhiệm vụ (phân loại 2 lớp vs. 3 lớp) và phương pháp tiền xử lý. Do đó, nghiên cứu chỉ so sánh với các công trình sử dụng bài toán phân loại 3 lớp cảm xúc (Positive, Negative, Neutral) trên dữ liệu tiếng Việt.
@@ -1849,6 +1878,7 @@ Bảng 3.20 tóm tắt kết quả của các nghiên cứu liên quan.
 
 \begin{table}[h]
 \centering
+\caption{So sánh kết quả với các nghiên cứu liên quan}
 \begin{tabular}{|l|c|c|c|c|c|}
 \hline
 \textbf{Nghiên cứu} & \textbf{Mô hình} & \textbf{Dữ liệu} & \textbf{Số lớp} & \textbf{Accuracy} & \textbf{F1 macro} \\
@@ -1869,7 +1899,6 @@ Nghiên cứu này & PhoBERT-CNN-LSTM & Tổng hợp (31.226) & 3 & 0.879 & 0.87
 \end{table}
 
 
-\textbf{Bảng 3.20. So sánh kết quả với các nghiên cứu liên quan.}
 
 
 Kết quả so sánh cho thấy nghiên cứu này đạt hiệu năng cạnh tranh và có phần vượt trội so với các công trình trước đây. Cụ thể, kết quả PhoBERT (F1 = 0.861) cao hơn nghiên cứu của Tran và Le (2022) sử dụng PhoBERT \+ LSTM (F1 = 0.854) dù tập dữ liệu của nghiên cứu này lớn hơn và đa dạng hơn. Mô hình lai PhoBERT-CNN-LSTM đạt F1 = 0.876, cao nhất trong tất cả các nghiên cứu so sánh, cho thấy việc kết hợp CNN và LSTM trên nền tảng PhoBERT hiệu quả hơn so với chỉ kết hợp LSTM đơn thuần.
@@ -1881,21 +1910,21 @@ Về nhóm mô hình truyền thống, kết quả SVM (F1 = 0.780) cao hơn ngh
 Tuy nhiên, cần lưu ý rằng việc so sánh chéo giữa các nghiên cứu chỉ mang tính tham khảo do sự khác biệt về tập dữ liệu, quy mô, lĩnh vực và phương pháp tiền xử lý. Điểm mạnh của nghiên cứu này nằm ở việc so sánh trực tiếp tất cả năm mô hình trên cùng một tập dữ liệu với cùng quy trình tiền xử lý, đảm bảo tính công bằng tuyệt đối trong đánh giá.
 
 
-\subsection{3.4.5. Bảng xếp hạng và đề xuất lựa chọn mô hình}
+\subsection{Bảng xếp hạng và đề xuất lựa chọn mô hình}
 
 
 Dựa trên phân tích toàn diện ở các mục trước, Bảng 3.21 tóm tắt xếp hạng các mô hình theo nhiều tiêu chí khác nhau và đề xuất bối cảnh ứng dụng phù hợp cho từng mô hình.
 
 
-hiệu năng | Xếp hạng
-
-tốc độ suy luận | Đề xuất ứng dụng |
-
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|}
+\scriptsize
+\caption{Xếp hạng và đề xuất ứng dụng các mô hình}
+\begin{tabular}{|p{2.6cm}|c|c|p{6.8cm}|}
 \hline
-\textbf{-----} & \textbf{:---:} & \textbf{:---:} & \textbf{:---:} \\
+\textbf{Mô hình} & \textbf{Xếp hạng hiệu năng} & \textbf{Xếp hạng tốc độ suy luận} & \textbf{Đề xuất ứng dụng} \\
+\hline
+PhoBERT-CNN-LSTM & 1 & 5 & Ứng dụng yêu cầu độ chính xác cao nhất (giám sát thương hiệu, phân tích thị trường) \\
 \hline
 PhoBERT (fine-tune) & 2 & 4 & Ứng dụng cần hiệu năng cao nhưng đơn giản trong triển khai \\
 \hline
@@ -1906,10 +1935,10 @@ Random Forest \+ TF-IDF & 4 & 3 & Ứng dụng cần mô hình có khả năng g
 Naive Bayes \+ TF-IDF & 5 & 1 & Baseline nhanh nhất cho kiểm tra ban đầu, tài nguyên hạn chế \\
 \hline
 \end{tabular}
+\normalsize
 \end{table}
 
 
-\textbf{Bảng 3.21. Xếp hạng và đề xuất ứng dụng các mô hình.}
 
 
 Nhìn chung, nếu tài nguyên tính toán không phải là rào cản, mô hình lai PhoBERT-CNN-LSTM là lựa chọn tối ưu với F1 macro cao nhất (0.8763), khả năng nhận diện công bằng giữa các lớp (gap nhỏ nhất: 0.051) và ROC-AUC trung bình cao nhất (0.9367). Trong trường hợp cần triển khai nhanh với chi phí thấp, SVM kết hợp TF-IDF là lựa chọn thay thế tốt nhất, đạt F1 macro 0.7795 với thời gian huấn luyện chỉ 15 giây và suy luận nhanh (0.384 ms mỗi mẫu).
@@ -1918,13 +1947,13 @@ Nhìn chung, nếu tài nguyên tính toán không phải là rào cản, mô h�
 Như vậy, mục 3.4 đã tiến hành so sánh toàn diện hiệu năng của năm mô hình dưới nhiều góc độ: hiệu năng tổng thể, hiệu năng theo lớp, chi phí tính toán, so sánh với nghiên cứu liên quan và đề xuất lựa chọn. Kết quả cho thấy mô hình lai PhoBERT-CNN-LSTM đạt hiệu năng tốt nhất trên hầu hết các tiêu chí, trong khi SVM là lựa chọn thay thế tối ưu trong các kịch bản ưu tiên tốc độ và chi phí thấp. Mục tiếp theo sẽ đi sâu vào phân tích và thảo luận nguyên nhân các kết quả này.
 
 
-\section{3.5. Phân tích và thảo luận kết quả}
+\section{Phân tích và thảo luận kết quả}
 
 
 Mục này đi sâu vào phân tích và thảo luận các kết quả thực nghiệm nhằm làm rõ nguyên nhân, cơ sở và ý nghĩa của các kết quả đạt được. Thay vì chỉ báo cáo các con số, nghiên cứu tiến hành phân tích đa chiều bao gồm: cơ chế dẫn đến sự khác biệt hiệu năng giữa các mô hình (mục 3.5.1), phân tích chuyên sâu các trường hợp dự đoán sai với ví dụ cụ thể (mục 3.5.2), đánh giá tác động của từng bước tiền xử lý qua ablation study (mục 3.5.3), phân tích ảnh hưởng của đặc thù dữ liệu theo lĩnh vực (mục 3.5.4), và thảo luận tổng quan về những phát hiện chính (mục 3.5.5).
 
 
-\subsection{3.5.1. Phân tích cơ chế hiệu năng giữa các nhóm mô hình}
+\subsection{Phân tích cơ chế hiệu năng giữa các nhóm mô hình}
 
 
 Kết quả thực nghiệm ở mục 3.3 và 3.4 đã cho thấy sự khác biệt rõ rệt về hiệu năng giữa ba nhóm mô hình: học máy truyền thống (F1: 0.71-0.78), học sâu PhoBERT (F1: 0.86) và mô hình lai (F1: 0.88). Mục này phân tích cơ chế cốt lõi dẫn đến sự khác biệt này từ góc độ biểu diễn đặc trưng và kiến trúc mô hình.
@@ -1966,7 +1995,7 @@ Lớp CNN đóng góp 0,72\% F1 nhờ khả năng phát hiện các mẫu n-gram
 Lớp BiLSTM đóng góp 0,53\% F1 thông qua việc mô hình hóa các phụ thuộc tuần tự giữa các đặc trưng do CNN trích xuất. Cơ chế hai chiều của BiLSTM cho phép mô hình xem xét thông tin từ cả hai hướng, giúp nhận diện các cấu trúc ngôn ngữ như phủ định kép ("không phải là không tốt") hoặc so sánh ("tốt hơn kỳ\_vọng nhưng vẫn chưa hoàn\_hảo"). Tuy nhiên, mức đóng góp của LSTM thấp hơn CNN cho thấy trong bài toán phân tích cảm xúc với bình luận ngắn (trung bình 39 từ), đặc trưng cục bộ quan trọng hơn đặc trưng tuần tự.
 
 
-\subsection{3.5.2. Phân tích chuyên sâu các trường hợp dự đoán sai}
+\subsection{Phân tích chuyên sâu các trường hợp dự đoán sai}
 
 
 Để hiểu rõ nguyên nhân gây ra sai sót phân loại, nghiên cứu tiến hành phân tích thủ công 500 mẫu bị phân loại sai (misclassified samples) trên tập kiểm thử, được chọn ngẫu nhiên từ tất cả năm mô hình với trọng số tỷ lệ theo số lượng lỗi của mỗi mô hình. Các mẫu được nhóm thành 6 nguyên nhân chính, với phân bố được trình bày trong Bảng 3.22.
@@ -1974,6 +2003,7 @@ Lớp BiLSTM đóng góp 0,53\% F1 thông qua việc mô hình hóa các phụ t
 
 \begin{table}[h]
 \centering
+\caption{Phân bố nguyên nhân dự đoán sai trên 500 mẫu}
 \begin{tabular}{|l|c|c|c|}
 \hline
 \textbf{Nguyên nhân} & \textbf{Số mẫu} & \textbf{Tỷ lệ} & \textbf{Ghi chú} \\
@@ -1994,7 +2024,6 @@ Nguyên nhân khác & 61 & 12,2\% & Lỗi gán nhãn, đa ngôn ngữ \\
 \end{table}
 
 
-\textbf{Bảng 3.22. Phân bố nguyên nhân dự đoán sai trên 500 mẫu.}
 
 
 \textbf{a) Hiện tượng mỉa mai và châm biếm (22,4\%)}
@@ -2045,7 +2074,7 @@ Nhóm lỗi lớn thứ hai (18,6\%) liên quan đến các bình luận Neutral
 Phân tích cho thấy ngay cả người gán nhãn cũng gặp khó khăn với nhóm này: khoảng 28\% các mẫu Neutral mơ hồ có chỉ số đồng thuận người gán nhãn (inter-annotator agreement) ở mức thấp (kappa dưới 0.4), cho thấy bản thân nhãn cảm xúc trong các trường hợp này đã có tính chủ quan cao.
 
 
-\subsection{3.5.3. Đánh giá tác động của từng bước tiền xử lý (Ablation Study)}
+\subsection{Đánh giá tác động của từng bước tiền xử lý (Ablation Study)}
 
 
 Để lượng hóa chính xác đóng góp của từng bước trong quy trình tiền xử lý 7 bước (đã mô tả ở mục 3.1.5), nghiên cứu tiến hành ablation study trên mô hình PhoBERT-CNN-LSTM. Trong mỗi thí nghiệm, một bước tiền xử lý được loại bỏ trong khi giữ nguyên tất cả các bước còn lại và toàn bộ siêu tham số. Kết quả được trình bày trong Bảng 3.23.
@@ -2053,6 +2082,7 @@ Phân tích cho thấy ngay cả người gán nhãn cũng gặp khó khăn vớ
 
 \begin{table}[h]
 \centering
+\caption[Tác động từng bước tiền xử lý lên hiệu năng mô hình]{Tác động của từng bước tiền xử lý lên hiệu năng mô hình PhoBERT-CNN-LSTM}
 \begin{tabular}{|l|c|c|}
 \hline
 \textbf{Cấu hình} & \textbf{F1 macro} & \textbf{Giảm F1} \\
@@ -2079,7 +2109,6 @@ Không tiền xử lý (bỏ tất cả) & 0.8187 & −5,76\% \\
 \end{table}
 
 
-\textbf{Bảng 3.23. Tác động của từng bước tiền xử lý lên hiệu năng mô hình PhoBERT-CNN-LSTM.}
 
 
 Kết quả ablation cho thấy hai bước quan trọng nhất là chuẩn hóa từ viết tắt/tiếng lóng (bước 5, giảm 3,29\%) và chuyển đổi emoji (bước 4, giảm 2,51\%). Khi bỏ cả hai bước này, F1 giảm xuống 0.8234, tức là giảm tổng cộng 5,29\%. Điều này khẳng định rằng đối với dữ liệu mạng xã hội tiếng Việt, việc xử lý các đặc trưng ngôn ngữ mạng (từ viết tắt, emoji) quan trọng không kém việc lựa chọn mô hình.
@@ -2091,7 +2120,7 @@ Bước tách từ VnCoreNLP (bước 6) cũng có tác động đáng kể (gi�
 Các bước còn lại (chuẩn hóa Unicode, chuẩn hóa văn bản, xử lý URL, loại bỏ từ dừng) có tác động nhỏ hơn (dưới 0,7\% mỗi bước), nhưng khi kết hợp tất cả, chúng tạo ra môi trường xử lý sạch và nhất quán giúp mô hình hoạt động tốt hơn tổng thể. So sánh với "không tiền xử lý" (F1 = 0.8187), toàn bộ quy trình cải thiện 5,76\% F1, cho thấy đầu tư vào tiền xử lý dữ liệu mang lại lợi ích rất đáng kể.
 
 
-\subsection{3.5.4. Phân tích hiệu năng theo lĩnh vực dữ liệu}
+\subsection{Phân tích hiệu năng theo lĩnh vực dữ liệu}
 
 
 Vì tập dữ liệu tổng hợp bao gồm ba lĩnh vực (ẩm thực, thương mại điện tử, giáo dục), nghiên cứu tiến hành đánh giá hiệu năng của mô hình tốt nhất (PhoBERT-CNN-LSTM) trên từng lĩnh vực riêng biệt để kiểm tra khả năng tổng quát hóa. Kết quả được trình bày trong Bảng 3.24.
@@ -2099,6 +2128,7 @@ Vì tập dữ liệu tổng hợp bao gồm ba lĩnh vực (ẩm thực, thươ
 
 \begin{table}[h]
 \centering
+\caption{Hiệu năng PhoBERT-CNN-LSTM theo lĩnh vực dữ liệu}
 \begin{tabular}{|l|c|c|c|c|c|c|}
 \hline
 \textbf{Lĩnh vực} & \textbf{Số mẫu test} & \textbf{Accuracy} & \textbf{F1 macro} & \textbf{F1 Pos} & \textbf{F1 Neg} & \textbf{F1 Neu} \\
@@ -2113,7 +2143,6 @@ Giáo dục (Student) & 821 & 0.8867 & 0.8834 & 0.9045 & 0.8698 & 0.8759 \\
 \end{table}
 
 
-\textbf{Bảng 3.24. Hiệu năng PhoBERT-CNN-LSTM theo lĩnh vực dữ liệu.}
 
 
 Kết quả cho thấy hiệu năng của mô hình khá ổn định trên ba lĩnh vực, với F1 macro dao động từ 0.8601 đến 0.8856. Lĩnh vực ẩm thực đạt kết quả cao nhất (F1 = 0.8856), có thể do bộ dữ liệu UIT-ViSFD được gán nhãn chất lượng cao với quy trình kiểm tra chéo nghiêm ngặt (kappa = 0.78). Lĩnh vực giáo dục xếp thứ hai (F1 = 0.8834), trong khi thương mại điện tử có kết quả thấp nhất (F1 = 0.8601).
@@ -2125,7 +2154,7 @@ Lĩnh vực thương mại điện tử có hiệu năng thấp nhất chủ y�
 Nhìn chung, chênh lệch hiệu năng giữa lĩnh vực cao nhất và thấp nhất là 2,55\% F1, mức chấp nhận được cho thấy mô hình có khả năng tổng quát hóa tốt trên các lĩnh vực khác nhau. Kết quả này cũng gợi ý rằng việc tinh chỉnh mô hình cho từng lĩnh vực cụ thể (domain-specific fine-tuning) có thể mang lại cải thiện thêm, nhưng không phải là yếu tố bắt buộc để đạt hiệu năng tốt.
 
 
-\subsection{3.5.5. Thảo luận tổng quan}
+\subsection{Thảo luận tổng quan}
 
 
 Từ toàn bộ phân tích ở các mục trước, nghiên cứu rút ra năm phát hiện chính sau đây.
@@ -2149,13 +2178,13 @@ Phát hiện thứ năm: có sự đánh đổi rõ rệt giữa hiệu năng ph
 Như vậy, mục 3.5 đã phân tích chuyên sâu các kết quả thực nghiệm từ nhiều góc độ, làm rõ cơ chế hiệu năng, nguyên nhân lỗi, tác động của tiền xử lý và ảnh hưởng của lĩnh vực dữ liệu. Các phát hiện cung cấp cơ sở khoa học vững chắc cho việc đề xuất hướng cải thiện trong tương lai, sẽ được trình bày chi tiết ở mục 3.7.
 
 
-\section{3.6. Hạn chế của nghiên cứu}
+\section{Hạn chế của nghiên cứu}
 
 
 Mặc dù nghiên cứu đã đạt được những kết quả tích cực và cung cấp cái nhìn so sánh toàn diện về các mô hình phân tích cảm xúc tiếng Việt, vẫn còn một số hạn chế cần được ghi nhận minh bạch. Việc nhận diện các hạn chế này không chỉ thể hiện tính trung thực khoa học mà còn định hướng cho các nghiên cứu tiếp theo.
 
 
-\subsection{3.6.1. Hạn chế về dữ liệu}
+\subsection{Hạn chế về dữ liệu}
 
 
 Hạn chế đầu tiên và quan trọng nhất liên quan đến quy mô và phạm vi của tập dữ liệu. Với tổng số 31.226 mẫu từ ba lĩnh vực (ẩm thực, thương mại điện tử, giáo dục), tập dữ liệu có quy mô trung bình so với các benchmarks quốc tế (như SST-2 với 67.000 mẫu, IMDB với 50.000 mẫu). Mặc dù đủ lớn để huấn luyện các mô hình học sâu như PhoBERT, kích thước này có thể chưa khai thác hết khả năng của các kiến trúc phức tạp hơn.
@@ -2170,7 +2199,7 @@ Về chất lượng gán nhãn, mặc dù các bộ dữ liệu được sử d
 Cuối cùng, dữ liệu được thu thập tại một thời điểm cụ thể và có thể không phản ánh sự biến đổi của ngôn ngữ mạng theo thời gian. Từ lóng và cách diễn đạt trên mạng xã hội tiếng Việt thay đổi nhanh chóng, do đó hiệu năng của mô hình có thể giảm dần khi áp dụng trên dữ liệu mới hơn.
 
 
-\subsection{3.6.2. Hạn chế về mô hình}
+\subsection{Hạn chế về mô hình}
 
 
 Nghiên cứu tập trung so sánh năm mô hình tiêu biểu đại diện cho hai nhóm chính: học máy truyền thống và học sâu dựa trên PhoBERT. Tuy nhiên, nhiều kiến trúc và phương pháp khác chưa được thử nghiệm.
@@ -2188,7 +2217,7 @@ Thứ ba, nghiên cứu chưa thử nghiệm các kiến trúc kết hợp khác
 Thứ tư, về phương pháp biểu diễn đặc trưng, nghiên cứu chưa thử nghiệm việc kết hợp đặc trưng từ PhoBERT với các nguồn thông tin bổ sung như từ điển cảm xúc tiếng Việt (sentiment lexicon), đặc trưng phong cách viết (writing style features), hoặc đặc trưng từ cấu trúc cú pháp (dependency parsing features). Các thông tin bổ trợ này có thể giúp mô hình nhận diện tốt hơn các hiện tượng ngôn ngữ phức tạp.
 
 
-\subsection{3.6.3. Hạn chế về xử lý ngôn ngữ}
+\subsection{Hạn chế về xử lý ngôn ngữ}
 
 
 Như phân tích ở mục 3.5.2, hiện tượng mỉa mai vẫn là thách thức lớn nhất với tỷ lệ nhận diện đúng chỉ đạt khoảng 38\% ngay cả trên mô hình tốt nhất. Điều này cho thấy các mô hình hiện tại chủ yếu dựa vào biểu diễn ngữ nghĩa bề mặt mà chưa thực sự hiểu được sự mâu thuẫn giữa nội dung literal và hàm ý ngữ dụng (pragmatic implication) đặc trưng của mỉa mai.
@@ -2200,7 +2229,7 @@ Bên cạnh đó, từ điển chuẩn hóa từ viết tắt gồm 438 mục t�
 Nghiên cứu cũng chưa xử lý bài toán nhận dạng cảm xúc trên bình luận đa ngôn ngữ (code-switching), ví dụ: bình luận pha trộn tiếng Việt và tiếng Anh như "Sản phẩm oke, recommend cho mọi người" hoặc "Giá hơi steep nhưng chất lượng quite good". Hiện tượng code-switching ngày càng phổ biến trong cộng đồng mạng Việt Nam, đặc biệt ở nhóm người dùng trẻ.
 
 
-\subsection{3.6.4. Hạn chế về đánh giá và triển khai}
+\subsection{Hạn chế về đánh giá và triển khai}
 
 
 Về phương pháp đánh giá, nghiên cứu chủ yếu sử dụng các chỉ số đánh giá tự động (Accuracy, F1, AUC) mà chưa tiến hành đánh giá bởi con người (human evaluation). Trong bối cảnh phân tích cảm xúc, một số dự đoán có thể được coi là "hợp lý dù sai" (reasonable disagreement), tức là nhãn dự đoán có thể chấp nhận được dù khác với nhãn ground truth. Ví dụ, bình luận "cũng tàm tạm" được gán nhãn Neutral nhưng mô hình dự đoán Positive cũng có thể coi là hợp lý.
@@ -2212,13 +2241,13 @@ Về môi trường thực nghiệm, tất cả các thí nghiệm được th�
 Cuối cùng, nghiên cứu dừng lại ở mức đánh giá và so sánh hiệu năng mô hình, chưa triển khai thành hệ thống ứng dụng hoàn chỉnh. Việc chuyển từ mô hình nghiên cứu sang hệ thống production đòi hỏi giải quyết nhiều bài toán bổ sung như: API phục vụ suy luận, xử lý luồng dữ liệu thời gian thực, cơ chế giám sát hiệu năng mô hình (model monitoring), và phát hiện sự dịch chuyển dữ liệu (data drift).
 
 
-\section{3.7. Hướng phát triển trong tương lai}
+\section{Hướng phát triển trong tương lai}
 
 
 Dựa trên kết quả nghiên cứu và những hạn chế đã nhận diện ở mục 3.6, một số hướng phát triển trong tương lai được đề xuất theo bốn nhóm chính: mở rộng dữ liệu và phạm vi nghiên cứu, cải tiến mô hình và phương pháp, giải quyết các thách thức ngôn ngữ, và triển khai ứng dụng thực tế.
 
 
-\subsection{3.7.1. Mở rộng dữ liệu và phạm vi nghiên cứu}
+\subsection{Mở rộng dữ liệu và phạm vi nghiên cứu}
 
 
 Hướng ưu tiên nhất là mở rộng quy mô tập dữ liệu lên trên 100.000 mẫu, thông qua việc thu thập bình luận từ nhiều lĩnh vực đa dạng hơn bao gồm chính trị, y tế, tài chính, thể thao, giải trí và du lịch. Việc đa dạng hóa lĩnh vực không chỉ giúp đánh giá khả năng tổng quát hóa của mô hình mà còn cho phép nghiên cứu transfer learning giữa các lĩnh vực (cross-domain sentiment analysis).
@@ -2230,7 +2259,7 @@ Nghiên cứu cũng đề xuất xây dựng bộ dữ liệu tiêu chuẩn (ben
 Bên cạnh đó, việc kết hợp nhiều nguồn dữ liệu khác nhau (mạng xã hội như Facebook, TikTok, diễn đàn như VozForum, trang đánh giá như Foody, Google Reviews) sẽ tăng tính đại diện cho các phong cách giao tiếp đa dạng của người dùng tiếng Việt trên Internet.
 
 
-\subsection{3.7.2. Cải tiến mô hình và phương pháp}
+\subsection{Cải tiến mô hình và phương pháp}
 
 
 Hướng thứ hai tập trung vào việc thử nghiệm và cải tiến các kiến trúc mô hình. Cụ thể, nghiên cứu đề xuất năm hướng chính sau đây.
@@ -2251,7 +2280,7 @@ Bốn là, tích hợp đặc trưng từ từ điển cảm xúc (sentiment lex
 Năm là, nghiên cứu phương pháp self-training và semi-supervised learning để tận dụng lượng lớn dữ liệu bình luận chưa gán nhãn trên Internet. Mô hình được huấn luyện ban đầu trên tập dữ liệu gán nhãn nhỏ có thể được sử dụng để gán nhãn pseudo-label cho dữ liệu chưa gán nhãn, sau đó kết hợp cả hai nguồn dữ liệu để huấn luyện lại mô hình trong vòng lặp tự cải thiện.
 
 
-\subsection{3.7.3. Giải quyết các thách thức ngôn ngữ}
+\subsection{Giải quyết các thách thức ngôn ngữ}
 
 
 Hướng thứ ba tập trung vào việc giải quyết các thách thức ngôn ngữ cụ thể đã được nhận diện trong nghiên cứu.
@@ -2266,7 +2295,7 @@ Về xử lý từ viết tắt và tiếng lóng động, nghiên cứu đề x
 Về xử lý bình luận đa ngôn ngữ (code-switching), nghiên cứu đề xuất thử nghiệm các mô hình đa ngôn ngữ như XLM-RoBERTa kết hợp với chiến lược nhận dạng ngôn ngữ (language identification) để xử lý hiệu quả các bình luận pha trộn tiếng Việt và tiếng Anh.
 
 
-\subsection{3.7.4. Triển khai ứng dụng thực tế}
+\subsection{Triển khai ứng dụng thực tế}
 
 
 Hướng thứ tư liên quan đến việc chuyển hóa kết quả nghiên cứu thành ứng dụng thực tế, cụ thể bao gồm bốn hướng triển khai sau.
@@ -2317,7 +2346,7 @@ Tóm lại, nghiên cứu đánh giá toàn diện hiệu năng các mô hình p
 \medskip\noindent\textbf{\Large TÀI LIỆU THAM KHẢO}
 \addcontentsline{toc}{chapter}{TÀI LIỆU THAM KHẢO}
 
-\begin{enumerate}
+\begin{enumerate}[label={[\arabic*]}]
     \item A.-T. P. Nguyen, D.-K. Duong, and V.-D. Hoang, ``Sentiment Prediction Based on Deep Learning for Intelligent E-Learning Systems,'' J. Tech. Educ. Sci., vol. 20, no. 03, pp. 16--25, Aug. 2025, doi: 10.54644/jte.2025.1661.
 
     \item T. L. Dinh and N. A. Le, ``Unsupervised clustering of Vietnamese positive and negative news using PhoBERT and DBSCAN,'' Indonesian Journal of Computer Science, vol. 14, no. 6, pp. 10207--10217, Dec. 2025, doi: 10.33022/ijcs.v14i6.5065.
